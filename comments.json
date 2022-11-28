@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "dishID": 10,
+        "name": "Barbara",
+        "message": "Toppen gott",
+        "date": {
+            "year": "2018",
+            "month": "09",
+            "day": "05"
+        }
+    },
+    {
+        "id": 2,
+        "dishID": 10,
+        "name": "Marielle",
+        "message": "Gillades av alla i familjen. Körde på lårfileer, men det gick bra det med.",
+        "date": {
+            "year": "2018",
+            "month": "04",
+            "day": "15"
+        }
+    },
+    {
+        "id": 3,
+        "dishID": 10,
+        "name": "Bo",
+        "message": "Detta var inte gott. Jag suger heller på en krokodilsvans",
+        "date": {
+            "year": "2018",
+            "month": "04",
+            "day": "09"
+        }
+    }
+]
