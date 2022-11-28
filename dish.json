@@ -1,0 +1,26 @@
+[
+    {
+        "id":,
+        "name":,
+        "info":,
+        "pictureurl":,
+        "fish":,
+        "meat":,
+        "chicken":,
+        "vegetarian":,
+        "price":,
+        "ingridients":[
+            "",
+            "",
+            ""
+        ],
+        "time":,
+        "todo":,
+        "allergies":,
+        "comments":[
+            "",
+            "",
+            ""
+        ],
+    }
+]
