@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "dishID": 10,
-        "name": "Barbara",
+        "dishId": 10,
+        "user": "Barbara",
         "message": "Toppen gott",
         "date": {
             "year": "2018",
@@ -12,8 +12,8 @@
     },
     {
         "id": 2,
-        "dishID": 10,
-        "name": "Marielle",
+        "dishId": 10,
+        "user": "Marielle",
         "message": "Gillades av alla i familjen. Körde på lårfileer, men det gick bra det med.",
         "date": {
             "year": "2018",
@@ -23,13 +23,124 @@
     },
     {
         "id": 3,
-        "dishID": 10,
-        "name": "Bo",
+        "dishId": 10,
+        "user": "Bo",
         "message": "Detta var inte gott. Jag suger heller på en krokodilsvans",
         "date": {
             "year": "2018",
             "month": "04",
             "day": "09"
         }
+    },
+    {
+        "id": 4,
+        "dishId": 11,
+        "user": "Annika",
+        "message": "Goda smaker, lätt att göra. Använde kycklingfilé i bitar med kebabkrydda i stället. Brödet var ingen höjdare, lite ”mastigt” för min smak.",
+        "date": {
+            "year": "2020",
+            "month": "11",
+            "day": "11"
+        }
+    },
+    {
+        "id": 4,
+        "dishId": 12,
+        "user": "Magnus",
+        "message": "Jag bytte ut samtliga ingredienser och gjorde köttfärssås och spagetti. Det blev jättegott",
+        "date": {
+            "year": "2022",
+            "month": "11",
+            "day": "23"
+        }
+    },
+    {
+        "id": 5,
+        "dishId": 12,
+        "user": "Maria",
+        "message": "Lite smaklöst recept, finns bättre på Flygande Jakob.",
+        "date": {
+            "year": "2022",
+            "month": "10",
+            "day": "26"
+        }
+    },
+    {
+        "id": 6,
+        "dishId": 12,
+        "user": "Ingela",
+        "message": "Supergott tycker alla i familjen! Har alltid i curry!",
+        "date": {
+            "year": "2018",
+            "month": "01",
+            "day": "10"
+        }
+    },
+    {
+        "id": 7,
+        "dishId": 15,
+        "user": "Martina",
+        "message": "Jättegod risotto!! Jag använde kantarellfond och tog en liten klick tryffelmajonäs till entrecoten. Så utsökta smaker tillsammans!",
+        "date": {
+            "year": "2022",
+            "month": "11",
+            "day": "26"
+        }
+    },
+    {
+        "id": 8,
+        "dishId": 15,
+        "user": "Adam",
+        "message": "Jag föredrar att ha svampen färdigstekt innan. Det blir gott att först steka svampen utan smör så att vätskan reduceras, därefter addera smör och krydda.",
+        "date": {
+            "year": "2022",
+            "month": "08",
+            "day": "20"
+        }
+    },
+    {
+        "id": 9,
+        "dishId": 15,
+        "user": "Adina",
+        "message": "Jag använde öl istället för vin. Det var också gott.",
+        "date": {
+            "year": "2022",
+            "month": "05",
+            "day": "31"
+        }
+    },
+    {
+        "id": 10,
+        "dishId": 15,
+        "user": "Per",
+        "message": "Varför förstöra hela rätten med senapskål!",
+        "date": {
+            "year": "2022",
+            "month": "01",
+            "day": "19"
+        }
+    },
+    {
+        "id": 11,
+        "dishId": 14,
+        "user": "Stina",
+        "message": "Oväntat gott recept med tydliga asiatiska toner",
+        "date": {
+            "year": "2020",
+            "month": "12",
+            "day": "03"
+        }
+    },
+    {
+        "id": 12,
+        "dishId": 14,
+        "user": "Veronica",
+        "message": "Sojamajonäsen tillsammans med rättika-salladen var perfekta ihop! Nuggetsen körde vi i ugn, blev lite torra tyckte vi.",
+        "date": {
+            "year": "2020",
+            "month": "11",
+            "day": "30"
+        }
     }
+
 ]
