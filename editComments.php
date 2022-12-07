@@ -14,12 +14,9 @@ $requestJson = file_get_contents("php://input");
 $requestData = json_decode($requestJson, true);
 
 if ($requestMethod == "PATCH") {
-    if (!isset($requestData["userId"], $requestData["commentId"], $requestData["message"])) {
-        $error = ["error" => "Bad Request"];
-        sendStatus($error, 400)
-    }
+   
 
-    $userId = $requestData["userId"];
+   
     $commentId = $requestData["commentId"];
     $message = $requestData["message"];
 
