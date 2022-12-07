@@ -14,20 +14,24 @@ $requestData = file_get_contents("php://input");
 $_POST = json_decode($requestData, true);
 
 if ($requestMethod == "POST") {
-    if(isset($_POST["userId"], $_POST["message"])) {
-        $userId = $_POST["userId"];
-        $message = $_POST["message"];
 
+    $userId = $_POST["userId"];
+    $message = $_POST["message"];
+    $dishId = $_POST["dishId"];
+
+    if(isset($userId, $message, $dishId)) {
+       
         $newId = 0;
 
         foreach ($comments as $comment) {
             if ($comment["commentId"] > $newId) {
-                $newId = $comment["commentId"]
+                $newId = $comment["commentId"];
             } 
         }
 
         $commentId = $newId + 1;
-        $newComment = ["commentId" => $commentId, "message" => $message];
+        $newComment = ["userId" => $userId, "commentId" => $commentId, "dishId" => $dishId, "message" => $message];
+       //TO DO: lägg till datum, php date
         $comments[] = $newComment;
         $json = json_encode($comments, JSON_PRETTY_PRINT);
         file_put_contents("comments.json", $json);

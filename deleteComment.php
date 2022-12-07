@@ -14,12 +14,13 @@ $requestJson = file_get_contents("php://input");
 $requestData = json_decode($requestJson, true);
 
 if ($requestMethod == "DELETE") {
-    if (!isset($requestData["commentId"])) {
+
+    $commentId = $requestData["commentId"];
+
+    if (!isset($commentId)) {
         $error = ["error" => "Bad Request"];
         sendStatus($error, 400);
     }
-
-    $commentId = $requestData["commentId"];
 
     foreach($comments as $number => $comment) {
         if ($comment["commentId"] == $commentId) {
