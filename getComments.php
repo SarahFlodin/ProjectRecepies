@@ -4,7 +4,7 @@ require_once "functions.php";
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-$recipes = [];
+$comments = [];
 
 if (file_exists("comments.json")) {
     $json = file_get_contents("comments.json");
@@ -13,7 +13,7 @@ if (file_exists("comments.json")) {
 
 if ($requestMethod == "GET") {
     if(!isset($comments)) {
-        sendStatus([], 200)
+        sendStatus([], 200);
     } else {
         sendStatus($comments);
     }
