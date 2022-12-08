@@ -13,7 +13,7 @@ if (file_exists("dishes.json")) {
 
 if ($requestMethod == "GET") {
     if(!isset($recipes)) {
-        sendStatus([], 200)
+        sendStatus([], 200);
     } else {
         sendStatus($recipes);
     }
