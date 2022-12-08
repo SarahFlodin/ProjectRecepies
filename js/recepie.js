@@ -1,48 +1,45 @@
-function buildDish(){
-        //BYT id till dish elelr dishId
-        //koppla till förstasidan :)
-        let dishResult = document.querySelector("#wrapper");
-        let dishIntroduction = document.createElement("div");
-        dishIntroduction.classList.add("dishIntroduction");
-        dishResult.append(dishIntroduction);
-        
-        dishIntroduction.innerHTML = `
-        <h1>${id.name}</h1>
-        <p>${id.time}  ${id.price}</p>
-        <p>${id.info}</p>
-        `;
+function buildDish(dish){
 
-        let dishIngredients = document.createElement("div");
-        dishIngredients.classList.add("dishIngredients");
-        dishResult.append(dishIngredients);
+    //TO DO: koppla till förstasidan :)
+    let dishResult = document.querySelector("#wrapper");
+    let dishIntroduction = document.createElement("div");
+    dishIntroduction.classList.add("dishIntroduction");
+    dishResult.append(dishIntroduction);
         
-        dishIngredients.innerHTML =`
-        <h1>Ingredienser</h1>
-        <p>${id.ingridients}</p>
-        `;
+    dishIntroduction.innerHTML = `
+    <h1>${dish.name}</h1>
+    <p>${dish.time}  ${dish.price}</p>
+    <p>${dish.info}</p>
+    `;
 
-        let dishTodo = document.createElement("div");
-        dishTodo.classList.add("dishTodo");
-        dishResult.append(dishTodo);
+    let dishIngredients = document.createElement("div");
+    dishIngredients.classList.add("dishIngredients");
+    dishResult.append(dishIngredients);
         
-        dishTodo.innerHTML =`
-        <h1>Gör såhär:</h1>
-        <p>${id.todo}</p>
-        `;
-    
-        let dishAllergies = document.createElement("div");
-        dishAllergies.classList.add("dishAllergies");
-        dishResult.append(dishAllergies);
+    dishIngredients.innerHTML =`
+    <h1>Ingredienser</h1>
+    <p>${dish.ingridients}</p>
+    `;
+
+    let dishTodo = document.createElement("div");
+    dishTodo.classList.add("dishTodo");
+    dishResult.append(dishTodo);
         
-        dishAllergies.innerHTML =`
-        <h1>Allergener</h1>
-        <p>${id.allergies}</p>
-        `;
-     
+    dishTodo.innerHTML =`
+    <h1>Gör såhär:</h1>
+    <p>${dish.todo}</p>
+    `;
     
+    let dishAllergies = document.createElement("div");
+    dishAllergies.classList.add("dishAllergies");
+    dishResult.append(dishAllergies);
+        
+    dishAllergies.innerHTML =`
+    <h1>Allergener</h1>
+    <p>${dish.allergies}</p>
+    `;
     
-    
- }
+}
 
  //buildDish();
     //ha innanför innerHTML med
