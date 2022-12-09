@@ -1,15 +1,15 @@
 function buildFooter(){
     let footerdiv = document.querySelector("footer");
-    let footer = document.createElement("div");
-    footer.innerHTML = `
+    footerdiv.innerHTML = `
     <p>&copy;</p>
-
-    </p>
-    <p>test</p>
-
-    `;
+    <p>blabla@hotmail.com</p>`;
     document.write(new Date().getFullYear());
-    footerdiv.append(footer);
+
+    let loggo = document.createElement("img");
+    //BYT icon till en gratis
+    loggo.src = "./images/loggo.png";
+    loggo.classList.add("footerLoggo");
+    footerdiv.append(loggo);
 }
 
 buildFooter();
