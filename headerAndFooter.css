@@ -1,0 +1,55 @@
+header {
+    width: 100vw;
+    height: 10vh;
+    bottom: 0;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+}
+
+.headerLoggo {
+     width: 55px;
+    height: 45px;
+}
+
+.userLoggo {
+    width: 45px;
+    height: 45px;
+}
+
+.favoritesLoggo {
+    width: 45px;
+    height: 40px;
+}
+
+.overlay {
+    width: 60%;
+    height: 80%;
+    background-color: black;
+    z-index: 1;
+    display: block;
+    position: fixed;
+}
+
+#popUp {
+    display: flex;
+    justify-content: center;
+}
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    bottom: 0;
+    background-color: gray;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.footerLoggo {
+    width: 45px;
+    height: 35px;
+}
+
+/*fixa till css*/

@@ -7,22 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="headerAndFooter.css">
 </head>
- <body>
-<header></header>
-    <div id="filterButtons">
-        <button id="meat" class="filterButton"></button>
-        <button id="fish" class="filterButton"></button>
-        <button id="chicken" class="filterButton"></button>
-        <button id="veg" class="filterButton"></button>
-        <button id="time" class="filterButton"></button>
-    </div>
-    <div id="recepies"></div>
-    <div id="panic"></div>
-    <!--TO DO: ta bort länken under när vi har fixat riktiga kopplingen-->
-    <a href="recepies.html">Länk till Receptsida</a>
 
+<body>
+    <header></header>
+    <div id="wrapper">
+        <div id="popUp"></div>
+        <div id="filterButtons">
+            <button id="meat" class="filterButton"></button>
+            <button id="fish" class="filterButton"></button>
+            <button id="chicken" class="filterButton"></button>
+            <button id="veg" class="filterButton"></button>
+            <button id="time" class="filterButton"></button>
+        </div>
+        <div id="recepies"></div>
+        <div id="panic"></div>
+        <!--TO DO: ta bort länken under när vi har fixat riktiga kopplingen-->
+        <a href="recepies.html">Länk till Receptsida</a>
+    </div>
     <footer></footer>
+    <script src="./js/header.js"></script>
     <script src="./js/allRecepies.js"></script>
     <script src="./js/footer.js"></script>
 </body>
