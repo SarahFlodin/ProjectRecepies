@@ -1,10 +1,16 @@
 function getDishes(){
-
+    let value = this.value;
     let rqst = new Request("./getRecepies.php");
     fetch(rqst)
     .then( r => r.json())
     .then(resource => {
-        resource.forEach(dish => {
+        document.querySelector("#recepies").innerHTML = "";
+        let filtered = resource;
+        if (value){
+           filtered = resource.filter(dish => dish.category == value) 
+        }
+        
+        filtered.forEach(dish => {
             let div = document.createElement("div");
             div.classList.add("smallDishes");
             document.querySelector("#recepies").append(div);
@@ -17,12 +23,17 @@ function getDishes(){
             <p class="time-duration">${dish.time} min</p>
             <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
             `;
-
         });
     });
 }
 
 getDishes();
+
+let filteredButtons = document.querySelectorAll(".filterButton")
+console.log(filteredButtons);
+
+filteredButtons.forEach(button => button.addEventListener("click", getDishes));
+
 
     //     dish.pictureurl
     //     dish.rating
