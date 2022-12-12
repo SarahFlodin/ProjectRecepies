@@ -15,6 +15,7 @@ function getDishes(){
             <h3>${dish.name}</h3>
             <p>${dish.info}</p>
             <p>${dish.time} min</p>
+            <img src="${dish.pictureurl}" alt="bild på ${dish.name}">
             `;
 
         });
