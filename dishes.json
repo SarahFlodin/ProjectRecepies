@@ -4,9 +4,7 @@
         "name": "Spaghetti Carbonara",
         "info": "En klassisk, krämig carbonara med parmesanost, ruccola och den finaste svartpepparn! Lika god en fredagkväll tillsammans med ett gott glas vin som till lyxlunch på helgen.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_168478/cf_259/kramig_carbonara.jpg",
-        "category": [
-            "meat"
-        ],
+        "category": "meat",
         "price": 80,
         "ingridients": [
             "2 förp bacon",
@@ -27,9 +25,7 @@
         "name": "Fisk- och skaldjurssoppa",
         "info": "Vad passar hösten bättre till än en krämig fisk- och skaldjurssoppa? Med en fisksoppbas smaksatt med hummer och vitt vin, behövs det bara tillsättas räkor, samt krispig salladslök för att få en smakrik soppa. Servera sedan tillsammans med en varm vitlöksbaguette.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_206658/cf_259/fisk-_och_skaldjurssoppa.jpg",
-        "category": [
-            "fish"
-        ],
+        "category": "fish",
         "price": 120,
         "ingridients": [
             "1 förp vitlöksbaguette",
@@ -47,9 +43,7 @@
         "name": "Rostas med krämig gnocchi",
         "info": "Rostas är en extra mör bit av nötkött som får en fantastisk smak när den steks i smör. Smakexplosion uppstår när den serveras med denna krämiga gnocchi med sting från dijonsenap. Toppa rätten med hackad persilja och söta romanticatomater.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_185342/cf_259/rostas_med_kramig_gnocchi.jpg",
-        "category": [
-            "meat"
-        ],
+        "category": "meat",
         "price": 100,
         "ingridients": [
             "4 port gnocchi",
@@ -71,9 +65,7 @@
         "name": "Lax med grönsakswok",
         "info": "Här kommer en lättlagad men ack så smarrig rätt, gjord på stekt lax och smakrik wok. Till det serveras nykokt ris. Gott för alla magar!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_243615/cf_259/lax_med_gronsakswok__.jpg",
-        "category": [
-            "fish"
-        ],
+        "category": "fish",
         "price": 80,
         "ingridients": [
             "4 port ris",
@@ -92,9 +84,7 @@
         "name": "Köttfärsgulash med potatis",
         "info": "Denna ungerska köttfärsgulasch är lättlagad och värmer bra i höstmörkret. Potatis- och paprikabitarna gör grytan mer matig så att du står dig hela dagen. Med en god brödbit till blir måltiden fulländad.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_36930/cf_259/kottfarsgulasch_med_potatis.jpg",
-        "category": [
-            "meat"
-        ],
+        "category": "meat",
         "price": 60,
         "ingridients": [
             "1 gul lök",
@@ -118,9 +108,7 @@
         "name": "Ugnsbakad fisk med pepparrotsost",
         "info": "Fisk smaksatt med pepparrot blir ofta riktigt gott. Här används färskost med smak av pepparrot. Häll grädde över och tillaga sedan fisken enkelt i ugnen. Under tiden kokas riset. Till den ugnsbakade fisken serverar du riset och fräscha mangoldblad.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_238635/cf_259/ugnsbakad_fisk_med_pepparrotsost.jpg",
-        "category": [
-            "fish"
-        ],
+        "category": "fish",
         "price": 90,
         "ingridients": [
             "600g alska pollock",
@@ -141,9 +129,7 @@
         "name": "Korv med krämig potatis",
         "info": "Stekt älgkorv serveras här med krämig potatis. Ett snabbt och enkelt sätt att få härligt krämig potatis är att vända ner lite smaksatt crème fraiche över den kokta potatisen, samt lite färsk hackad persilja. Smaklig spis önskar vi!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_241874/cf_259/algkorv_med_kramig_potatis.jpg",
-        "category": [
-            "meat"
-        ],
+        "category": "meat",
         "price": 90,
         "ingridients": [
             "900g potatis",
@@ -164,9 +150,7 @@
         "name": "Lax med bladspenat och pasta",
         "info": "Här är ett gott och fräscht recept på lax med bladspenat och pasta. En snabblagad, krämig och läcker rätt som livar upp vardagen på ett trevligt sätt.!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_40681/cf_259/lax_med_bladspenat_och_pasta.jpg",
-        "category": [
-            "fish"
-        ],
+        "category": "fish",
         "price": 90,
         "ingridients": [
             "4 port laxfilé",
@@ -189,9 +173,7 @@
         "name": "Kycklingkorv i ugn med mos",
         "info": "Ett lättlagat och gott alternativ till klassiskt ugnsstekt falukorv. Låt kycklingkorven få sällskap av inlagd gurka, ost och ketchup – en smakkombination som oftast går hem hos både stora och små. Servera tillsammans med krämigt potatismos, som du enkelt vispar ihop med lite varm mjölk.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_245318/cf_259/kycklingkorv_i_ugn_med_mos.jpg",
-        "category": [
-            "chicken"
-        ],
+        "category": "chicken",
         "price": 65,
         "ingridients": [
             "900 g potatis",
@@ -214,9 +196,7 @@
         "name": "Pestofylld kyckling med pasta",
         "info": "En lättlagad och god kycklingrätt med pesto. Att tillaga kycklingen i ugnen med pesto och mozzarella gör den saftig och smakrik. Snitta och fyll filéerna och låt dem bakas medan du kokar pastan och bönorna. Blanda den nykokta pastan med det som blir över av peston.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_245321/cf_259/pestofylld_kyckling_med_pasta.jpg",
-        "category": [
-            "chicken"
-        ],
+        "category": "chicken",
         "price": 80,
         "ingredients": [
             "640 g kycklingfiléer",
@@ -237,9 +217,7 @@
         "name": "Kycklingkebab med libabröd och picklad lök",
         "info": "Att äta med händerna är ett lite roligare sätt att få i sig middagen. Kycklingkebaben läggs i libabröden ihop med tillbehör så som snabbinlagd rödlök, tomater, sallad och upphettade pimiento de padron. Ät ihop med en generös klick av hummus och njut!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_241876/cf_259/kycklingkebab_med_libabrod_och_picklad_lok_.jpg",
-        "category": [
-            "chicken"
-        ],
+        "category": "chicken",
         "price": 70,
         "ingredients": [
             "2 rödlök",
@@ -263,9 +241,7 @@
         "name": "Flygande Jacob",
         "info": "Här bjuder vi på en riktig klassiker: Flygande Jacob! En läcker rätt med kyckling, bacon, grädde, banan, chilisås och jordnötter. Receptet publicerades första gången 1976 och upphovsmannen lär vara Ove Jacobsson, verksam inom flygfrakt. Tack Ove för denna oslagbara rätt!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_223444/cf_259/flygande_jacob.jpg",
-        "category": [
-            "chicken"
-        ],
+        "category": "chicken",
         "price": 80,
         "ingredients": [
             "4 kycklingfiléer (à ca 150 g)",
@@ -288,9 +264,7 @@
         "name": "Broccolipaj",
         "info": "Denna klassiska broccolipaj är god och enkel att göra. I äggstanningen river du ner en smakrik hårdost och toppra sedan pajen med solroskärnor som tillför just det där lilla extra till denna matiga paj med broccoli.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_245326/cf_259/broccolipaj.jpg",
-        "category": [
-            "vegetarian"
-        ],
+        "category": "vegetarian",
         "price": 50,
         "ingredients": [
             "2 1/2 dl vetemjöl",
@@ -316,9 +290,7 @@
         "name": "Vegonuggets med sojamajonnäs",
         "info": "Här kommer ett perfekt sätt att servera ovo- vegetariskt till de skeptiska i familjen; vegonuggets! Dessa nuggets är så goda och ingen kommer kunna gissa att de bara innehåller vegetariska ingredienser. Ät ihop med ris och en härligt syrlig rättikasallad.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_245269/cf_259/vegonuggets_med_sojamajonnas_.jpg",
-        "category": [
-            "vegetarian"
-        ],
+        "category": "vegetarian",
         "price": 50,
         "ingredients": [
             "4 port ris",
@@ -341,9 +313,7 @@
         "name": "Risotto med skogschampinjoner",
         "info": "En perfekt kokt risotto är krämig och riset har kvar lite tuggmotstånd. Följ det här grundreceptet på svamprisotto och du har alla chanser att lyckas. Kastanjechampinjonerna i risotton går utmärkt att byta ut mot andra goda svampar som kantareller, karljohansvamp eller portabella till en ännu lyxigare vegetarisk festrätt.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_89399/cf_259/risotto_med_skogschampinjoner.jpg",
-        "category": [
-            "vegetarian"
-        ],
+        "category": "vegetarian",
         "price": 40,
         "ingredients": [
             "3 schalottenlökar",
@@ -367,9 +337,7 @@
         "name": "Vegocurry med broccoli och halloumi",
         "info": "En indiskdoftande curry står på kvällens meny, med crunchy broccoli och mjuk halloumi. Till det serveras äggnudlar. Mums!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_244014/cf_259/vegocurry_med_broccoli_och_halloumi.jpg",
-        "category": [
-            "vegetarian"
-        ],
+        "category": "vegetarian",
         "price": 50,
         "ingredients": [
             "250 g broccoli",
