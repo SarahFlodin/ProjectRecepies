@@ -4,6 +4,7 @@
 
 body {
     margin: auto;
+    overflow-x: hidden;
 }
 
 #wrapper {
@@ -39,34 +40,37 @@ body {
 }
 
 .dish-name {
-    grid-column: 1 / span 3;
-    grid-row: 1;
-    font-family: var(--fontStyle);
-    padding: 30px 0 8px;
-    position: relative;
+  grid-column: 1 / span 3;
+  grid-row: 1;
+  font-family: var(--fontStyle);
+  padding: 30px 0 8px;
+  position: relative;
 }
 
 .dish-name::before {
-    content: "";
-    position: absolute;
-    left: 20%;
-    bottom: 16px;
-    width: 150px;
-    height: 7px;
-    transform: skew(-12deg) translateX(-50%);
-    background: rgb(255, 252, 153);
-    z-index: -1;
+  content: "";
+  position: absolute;
+  left: 20%;
+  bottom: 16px;
+  width: 150px;
+  height: 7px;
+  transform: skew(-12deg) translateX(-50%);
+  background: rgb(255, 252, 153);
+  z-index: -1;
 }
 
 .dish-info {
-    grid-row: 2;
-    grid-column: 1 / span 4;
+  grid-row: 2;
+  grid-column: 1 / span 4;
 }
 
 
 /* Buttons */
 .filterButton {
   font-size: 16px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 15px;
   font-weight: 200;
   letter-spacing: 1px;
   padding: 13px 20px 13px;

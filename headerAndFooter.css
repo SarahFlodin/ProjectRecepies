@@ -2,7 +2,7 @@ header {
     width: 100vw;
     height: 10vh;
     bottom: 0;
-    background-color: gray;
+    background-color: pink;
     display: flex;
     align-items: center;
 }
@@ -90,7 +90,7 @@ footer {
     width: 100vw;
     height: 10vh;
     bottom: 0;
-    background-color: gray;
+    background-color: pink;
     display: grid;
     align-items: center;
     justify-items: center;
