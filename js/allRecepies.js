@@ -18,9 +18,8 @@ function getDishes(){
             //& hjärta och rating
             //bild på klocka bredvid tiden
             div.innerHTML=`
-            <h3 class="dish-name">${dish.name}</h3>
+            <h3 class="dish-name">${dish.name} - ${dish.time} min</h3>
             <p class="dish-info">${dish.info}</p>
-            <p class="time-duration">${dish.time} min</p>
             <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
             `;
         });
