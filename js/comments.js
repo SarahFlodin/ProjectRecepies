@@ -5,7 +5,7 @@ function get_comments(){
     .then(resource => {
         resource.forEach(comment => {
             let div = document.createElement("div");
-            document.querySelector("body").appendChild(div);
+            document.querySelector("#recepie").appendChild(div);
            //TO DO: ändra userId till username,
            //behöver först koppla/hitta den user
            //som har samma userId(user.json) som 
