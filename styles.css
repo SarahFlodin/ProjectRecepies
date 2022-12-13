@@ -29,10 +29,18 @@ body {
   margin: 20px;
   padding: 10px;
   box-shadow: 5px 10px aquamarine;
+  align-self:center;
+  background:transparent;
+  transition:all .5s ease;
+  color:#41403E;
+  letter-spacing:1px;
+  outline:none;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
 .smallDishes:hover {
   cursor: pointer;
+  box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.3);
 }
 
 .dish-img {
@@ -85,6 +93,13 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  align-self:center;
+  background:transparent;
+  transition:all .5s ease;
+  color:#41403E;
+  letter-spacing:1px;
+  outline:none;
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
 .filterButton:after {
