@@ -22,8 +22,8 @@ function getDishes(){
 
 
             document.querySelector("#recepies").append(div);
-            //TO DO: lägg till picture url
-            //& hjärta och rating
+            //TO DO:
+            //hjärta och rating
             //bild på klocka bredvid tiden
             div.innerHTML=`
             <h3 class="dish-name">${dish.name} - ${dish.time} min</h3>
