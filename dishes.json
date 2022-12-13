@@ -6,7 +6,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_168478/cf_259/kramig_carbonara.jpg",
         "category": "meat",
         "price": 80,
-        "ingridients": [
+        "ingredients": [
             "2 förp bacon",
             "500g spaghetti",
             "riven parmesanost",
@@ -27,7 +27,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_206658/cf_259/fisk-_och_skaldjurssoppa.jpg",
         "category": "fish",
         "price": 120,
-        "ingridients": [
+        "ingredients": [
             "1 förp vitlöksbaguette",
             "400g soppbas med hummer och vittvin",
             "1 dl mellangrädde",
@@ -45,7 +45,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_185342/cf_259/rostas_med_kramig_gnocchi.jpg",
         "category": "meat",
         "price": 100,
-        "ingridients": [
+        "ingredients": [
             "4 port gnocchi",
             "ca 300g rostas",
             "1 msk smör",
@@ -67,7 +67,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_243615/cf_259/lax_med_gronsakswok__.jpg",
         "category": "fish",
         "price": 80,
-        "ingridients": [
+        "ingredients": [
             "4 port ris",
             "2 förp wokmix fusion med dressing",
             "2 msk olja",
@@ -86,7 +86,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_36930/cf_259/kottfarsgulasch_med_potatis.jpg",
         "category": "meat",
         "price": 60,
-        "ingridients": [
+        "ingredients": [
             "1 gul lök",
             "800 g potatisar",
             "2 röda paprikor",
@@ -110,7 +110,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_238635/cf_259/ugnsbakad_fisk_med_pepparrotsost.jpg",
         "category": "fish",
         "price": 90,
-        "ingridients": [
+        "ingredients": [
             "600g alska pollock",
             "salt",
             "peppar",
@@ -131,7 +131,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_241874/cf_259/algkorv_med_kramig_potatis.jpg",
         "category": "meat",
         "price": 90,
-        "ingridients": [
+        "ingredients": [
             "900g potatis",
             "1 förp hericots verts",
             "1 förp färsk persilja",
@@ -152,7 +152,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_40681/cf_259/lax_med_bladspenat_och_pasta.jpg",
         "category": "fish",
         "price": 90,
-        "ingridients": [
+        "ingredients": [
             "4 port laxfilé",
             "4 port pennepasta",
             "1 gul lök",
@@ -175,7 +175,7 @@
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_245318/cf_259/kycklingkorv_i_ugn_med_mos.jpg",
         "category": "chicken",
         "price": 65,
-        "ingridients": [
+        "ingredients": [
             "900 g potatis",
             "500 g kycklingstekkorv",
             "1 dl hackad inlag gurka",
