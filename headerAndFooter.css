@@ -2,7 +2,7 @@ header {
     width: 100vw;
     height: 10vh;
     bottom: 0;
-    background-color: pink;
+    background-color: #ffc0cb;
     display: flex;
     align-items: center;
 }
