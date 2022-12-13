@@ -12,11 +12,22 @@ if (file_exists("comments.json")) {
 }
 
 if ($requestMethod == "GET") {
-    if(!isset($comments)) {
-        sendStatus([], 200);
-    } else {
-        sendStatus($comments);
+    if(isset($_GET["id"])){
+        $id = $_GET["id"];
+
+        foreach($comments as $comment){
+            if($comment["dishId"] == $id){
+                sendStatus($comment);
+            }
+        }
+        $error = ["error" => "Not Found"];
+        sendStatus($error, 404);
+
     }
+  sendStatus($comments);
 }
 
 ?>
+
+<!-- Har gjort en enskild php för enskilda-
+kommentarer, möjligtvis ta bort denna -->

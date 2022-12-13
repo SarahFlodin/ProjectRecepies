@@ -24,6 +24,7 @@ function getDish() {
 }
 
 getDish();
+
 function buildDish(dish) {
 
     //TO DO: get enskilt recepie i php
@@ -32,7 +33,7 @@ function buildDish(dish) {
     //och egen api för att hämta kommentarer för enskata recept
     //I api if(requested = "GET")
    
-    let dishResult = document.querySelector("#wrapper");
+    let dishResult = document.querySelector("#recepie");
     let dishIntroduction = document.createElement("div");
     dishIntroduction.classList.add("dishIntroduction");
     dishResult.append(dishIntroduction);
@@ -49,7 +50,7 @@ function buildDish(dish) {
 
     dishIngredients.innerHTML = `
     <h1>Ingredienser</h1>
-    <p>${dish.ingridients}</p>
+    <p>${dish.ingredients}</p>
     `;
 
     let dishTodo = document.createElement("div");
