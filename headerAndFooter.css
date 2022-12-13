@@ -28,7 +28,8 @@ header {
 }
 
 .overlay {
-    background-color: rgb(93, 154, 93);
+    z-index: 10;
+    background-color: rgb(255, 141, 160);
     width: 45vw;
     height: 80vh;
     border-radius: 10px;
