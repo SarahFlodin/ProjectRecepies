@@ -13,6 +13,9 @@ function getDishes(){
         filtered.forEach(dish => {
             let div = document.createElement("div");
             div.classList.add("smallDishes");
+            div.addEventListener("click", function(){
+                location.href = `./recepies.html?id=${dish.id}`;
+            });
             document.querySelector("#recepies").append(div);
             //TO DO: lägg till picture url
             //& hjärta och rating
