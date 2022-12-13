@@ -13,7 +13,14 @@ function getDishes(){
         filtered.forEach(dish => {
             let div = document.createElement("div");
             div.classList.add("smallDishes");
-            div.setAttribute("id", `${dish.id}`)
+
+            div.addEventListener("click", function(){
+                location.href = `./recepies.html?id=${dish.id}`;
+            });
+            
+            //div.setAttribute("id", `${dish.id}`)
+
+
             document.querySelector("#recepies").append(div);
             //TO DO: lägg till picture url
             //& hjärta och rating
@@ -31,8 +38,8 @@ function getDishes(){
             //    console.log();
             //}))
 
-            div.addEventListener("click", sendToDish)
-            console.log(sendToDish);
+            //div.addEventListener("click", sendToDish)
+            //console.log(sendToDish);
             // return div;
         });
     });
@@ -43,12 +50,12 @@ let filteredButtons = document.querySelectorAll(".filterButton")
 
 filteredButtons.forEach(button => button.addEventListener("click", getDishes));
 
-function sendToDish (dishId) {
-    document.querySelector(".smallDishes").onclick = function () {
-        sessionStorage.setItem("dishId", dishId);
-        location.href = "recepies.html"
-    }
-}
+//function sendToDish (dishId) {
+    //document.querySelector(".smallDishes").onclick = function () {
+        //sessionStorage.setItem("dishId", dishId);
+        //location.href = "recepies.html"
+    //}
+//}
 
 getDishes();
 
