@@ -2,7 +2,7 @@ header {
     width: 100vw;
     height: 10vh;
     bottom: 0;
-    background-color: gray;
+    background-color: #ffc0cb;
     display: flex;
     align-items: center;
 }
@@ -28,7 +28,8 @@ header {
 }
 
 .overlay {
-    background-color: rgb(93, 154, 93);
+    z-index: 10;
+    background-color: rgb(255, 141, 160);
     width: 45vw;
     height: 80vh;
     border-radius: 10px;
@@ -90,7 +91,7 @@ footer {
     width: 100vw;
     height: 10vh;
     bottom: 0;
-    background-color: gray;
+    background-color: pink;
     display: grid;
     align-items: center;
     justify-items: center;
