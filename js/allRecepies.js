@@ -24,15 +24,22 @@ function getDishes(){
             <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
             `;
 
-            div.addEventListener("click", sendToDish);
+            //let dishDiv = document.querySelectorAll(".smallDishes");
+
+            //dishDiv.forEach(div => div.addEventListener("click", function () {
+            //    sendToDish(dish.id);
+            //    console.log();
+            //}))
+
+            div.addEventListener("click", sendToDish)
+            console.log(sendToDish);
+            // return div;
         });
     });
 }
 
-getDishes();
-
 let filteredButtons = document.querySelectorAll(".filterButton")
-console.log(filteredButtons);
+// console.log(filteredButtons);
 
 filteredButtons.forEach(button => button.addEventListener("click", getDishes));
 
@@ -43,7 +50,7 @@ function sendToDish (dishId) {
     }
 }
 
-
+getDishes();
 
     //     dish.pictureurl
     //     dish.rating
