@@ -2,6 +2,7 @@
     {
         "userId": 1,
         "userName": "Erik Pineiro",
-        "password": "mau123"
+        "password": "mau123",
+        "favorites": [1, 4, 8, 16]
     }
 ]
