@@ -6,6 +6,10 @@
 body {
   margin: auto;
   overflow-x: hidden;
+  background-image: url(./images/dottedbackground-light.png);
+  background-position: center;
+  background-repeat: repeat;
+  background-size: 7%;
 }
 
 #wrapper {
@@ -23,6 +27,7 @@ body {
 }
 
 .smallDishes {
+  background-color: #fff;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -32,7 +37,6 @@ body {
   padding-left: 30px;
   box-shadow: 5px 10px aquamarine;
   align-self:center;
-  background:transparent;
   transition:all .5s ease;
   color:#41403E;
   letter-spacing:1px;
@@ -112,18 +116,6 @@ body {
   font-family: var(--fontStyle);
   padding: 30px 0 8px;
   position: relative;
-}
-
-.dish-name::before {
-  content: "";
-  position: absolute;
-  left: 20%;
-  bottom: 16px;
-  width: 150px;
-  height: 7px;
-  transform: skew(-12deg) translateX(-50%);
-  background: rgb(255, 252, 153);
-  z-index: -1;
 }
 
 .dish-info {
