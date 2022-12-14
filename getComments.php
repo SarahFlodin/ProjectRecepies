@@ -28,6 +28,3 @@ if ($requestMethod == "GET") {
 }
 
 ?>
-
-<!-- Har gjort en enskild php för enskilda-
-kommentarer, möjligtvis ta bort denna -->
