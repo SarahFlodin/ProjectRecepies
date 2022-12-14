@@ -105,7 +105,7 @@
     },
     {
         "id": 6,
-        "name": "Ugnsbakad fisk med pepparrotsost",
+        "name": "Fisk med pepparrotsost",
         "info": "Fisk smaksatt med pepparrot blir ofta riktigt gott. Här används färskost med smak av pepparrot. Häll grädde över och tillaga sedan fisken enkelt i ugnen. Under tiden kokas riset. Till den ugnsbakade fisken serverar du riset och fräscha mangoldblad.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_238635/cf_259/ugnsbakad_fisk_med_pepparrotsost.jpg",
         "category": "fish",
@@ -147,7 +147,7 @@
     },
     {
         "id": 8,
-        "name": "Lax med bladspenat och pasta",
+        "name": "Laxpasta med bladspenat",
         "info": "Här är ett gott och fräscht recept på lax med bladspenat och pasta. En snabblagad, krämig och läcker rätt som livar upp vardagen på ett trevligt sätt.!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_40681/cf_259/lax_med_bladspenat_och_pasta.jpg",
         "category": "fish",
@@ -193,7 +193,7 @@
     },
     {
         "id": 10,
-        "name": "Pestofylld kyckling med pasta",
+        "name": "Pestokyckling med pasta",
         "info": "En lättlagad och god kycklingrätt med pesto. Att tillaga kycklingen i ugnen med pesto och mozzarella gör den saftig och smakrik. Snitta och fyll filéerna och låt dem bakas medan du kokar pastan och bönorna. Blanda den nykokta pastan med det som blir över av peston.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_245321/cf_259/pestofylld_kyckling_med_pasta.jpg",
         "category": "chicken",
@@ -214,7 +214,7 @@
     },
     {
         "id": 11,
-        "name": "Kycklingkebab med libabröd och picklad lök",
+        "name": "Kycklingkebab med libabröd",
         "info": "Att äta med händerna är ett lite roligare sätt att få i sig middagen. Kycklingkebaben läggs i libabröden ihop med tillbehör så som snabbinlagd rödlök, tomater, sallad och upphettade pimiento de padron. Ät ihop med en generös klick av hummus och njut!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_241876/cf_259/kycklingkebab_med_libabrod_och_picklad_lok_.jpg",
         "category": "chicken",
@@ -287,7 +287,7 @@
     },
     {
         "id": 14,
-        "name": "Vegonuggets med sojamajonnäs",
+        "name": "Vegobitar med sojamajonnäs",
         "info": "Här kommer ett perfekt sätt att servera ovo- vegetariskt till de skeptiska i familjen; vegonuggets! Dessa nuggets är så goda och ingen kommer kunna gissa att de bara innehåller vegetariska ingredienser. Ät ihop med ris och en härligt syrlig rättikasallad.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_245269/cf_259/vegonuggets_med_sojamajonnas_.jpg",
         "category": "vegetarian",
@@ -310,7 +310,7 @@
     },
     {
         "id": 15,
-        "name": "Risotto med skogschampinjoner",
+        "name": "Risotto med champinjoner",
         "info": "En perfekt kokt risotto är krämig och riset har kvar lite tuggmotstånd. Följ det här grundreceptet på svamprisotto och du har alla chanser att lyckas. Kastanjechampinjonerna i risotton går utmärkt att byta ut mot andra goda svampar som kantareller, karljohansvamp eller portabella till en ännu lyxigare vegetarisk festrätt.",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_89399/cf_259/risotto_med_skogschampinjoner.jpg",
         "category": "vegetarian",
@@ -334,7 +334,7 @@
     },
     {
         "id": 16,
-        "name": "Vegocurry med broccoli och halloumi",
+        "name": "Vegocurry med halloumi",
         "info": "En indiskdoftande curry står på kvällens meny, med crunchy broccoli och mjuk halloumi. Till det serveras äggnudlar. Mums!",
         "pictureurl": "https://assets.icanet.se/e_sharpen:80,q_auto,dpr_1.25,w_718,h_718,c_lfill/imagevaultfiles/id_244014/cf_259/vegocurry_med_broccoli_och_halloumi.jpg",
         "category": "vegetarian",
