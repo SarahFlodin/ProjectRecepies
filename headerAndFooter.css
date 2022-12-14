@@ -87,6 +87,16 @@ header {
     margin-top: 0px;
 }
 
+#panic {
+    width: 100px;
+    height: 100px;
+    background-color: hotpink;
+    border-radius: 50%;
+    position: fixed;
+    top: 60%;
+    left: 80%;
+}
+
 footer {
     width: 100vw;
     height: 10vh;
