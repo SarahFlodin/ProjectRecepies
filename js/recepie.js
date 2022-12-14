@@ -35,23 +35,27 @@ function buildDish(dish) {
    
     let dishResult = document.querySelector("#recepie");
     let dishIntroduction = document.createElement("div");
-    dishIntroduction.classList.add("dishIntroduction");
+    dishIntroduction.classList.add("dishIntro");
     dishResult.append(dishIntroduction);
 
     dishIntroduction.innerHTML = `
     <h1>${dish.name}</h1>
-    <p>${dish.time}  ${dish.price}</p>
+    <p>Tillagningstid ca: ${dish.time} min <br> Pris för 4 portioner ca: ${dish.price} kr</p>
     <p>${dish.info}</p>
     `;
 
+
     let dishIngredients = document.createElement("div");
+    dishIngredients.innerHTML = `<h1>Ingredienser</h1> <ul></ul>`;
+    let ingredients_container = dishIngredients.querySelector("ul");
     dishIngredients.classList.add("dishIngredients");
     dishResult.append(dishIngredients);
 
-    dishIngredients.innerHTML = `
-    <h1>Ingredienser</h1>
-    <p>${dish.ingredients}</p>
-    `;
+    for (let i = 0; i < dish.ingredients.length; i++) {
+        let ingredient_dom = document.createElement("li");
+        ingredient_dom.innerHTML = `${dish.ingredients[i]}`;
+        ingredients_container.append(ingredient_dom);
+    }
 
     let dishTodo = document.createElement("div");
     dishTodo.classList.add("dishTodo");
@@ -61,6 +65,10 @@ function buildDish(dish) {
     <h1>Gör såhär:</h1>
     <p>${dish.todo}</p>
     `;
+    let group = document.createElement("div");
+    group.classList.add("group");
+    group.append(dishIngredients, dishTodo);
+    dishResult.append(group);
 
     let dishAllergies = document.createElement("div");
     dishAllergies.classList.add("dishAllergies");
