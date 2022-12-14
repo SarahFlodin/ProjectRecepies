@@ -1,25 +1,32 @@
 header {
     width: 100vw;
-    height: 10vh;
+    height: 20vh;
     bottom: 0;
     background-color: #ffc0cb;
+    display: flex;
+    justify-content: right;
+}
+
+.headerLoggo {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 2%;
+}
+
+.headerdiv {
     display: flex;
     align-items: center;
 }
 
-.headerLoggo {
-    width: 55px;
-    height: 45px;
-}
-
 .userLoggo {
-    width: 45px;
-    height: 45px;
+    width: 100px;
+    height: 100px;
 }
 
 .favoritesLoggo {
-    width: 45px;
-    height: 40px;
+    width: 100px;
+    height: 100px;
 }
 
 #popUp {

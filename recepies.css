@@ -1,0 +1,73 @@
+:root {
+    --fontStyle: 'Gloria Hallelujah', cursive;
+    --pinkColor: pink;
+}
+
+body{
+    margin: 0px;
+}
+
+#wrapper{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    width: 80%;
+    align-items: center;
+}
+
+h1 {
+    font-family: var(--fontStyle);
+}
+
+.dishIntro{
+    border: solid 1px rgb(0, 0, 0);
+    margin: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    box-shadow: 5px 10px rgb(226, 169, 245);
+    align-self: center;
+    background: transparent;
+    color: #41403E;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height: 1.5;
+}
+
+.dishAllergies{
+    border: solid 1px black;
+    margin: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    box-shadow: 5px 10px rgb(226, 169, 245);
+    align-self: center;
+    background: transparent;
+    color: #41403E;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height: 1.5;
+}
+
+.dishIngredients, .dishTodo{
+    border: solid 1px black;
+    margin: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    box-shadow: 5px 10px rgb(226, 169, 245);
+    align-self: center;
+    background: transparent;
+    color: #41403E;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height: 1.5;
+}
+
+.dishIngredients {
+    width: 50%;
+}
+.dishTodo {
+    width: 100%;
+}
+.group{
+    display: flex;
+}
+
