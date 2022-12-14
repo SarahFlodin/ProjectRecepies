@@ -2,7 +2,7 @@ function buildFooter(){
     let footerdiv = document.querySelector("footer");
     let year = new Date().getFullYear();
     footerdiv.innerHTML = `
-    <p>${year} &copy;</p>
+    <p>&copy; ${year}</p>
     <p>blabla@hotmail.com</p>`;
     
 

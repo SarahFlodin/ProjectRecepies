@@ -29,12 +29,13 @@ body {
 .smallDishes {
   background-color: #fff;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-template-rows: repeat(2, 1fr);
   border: solid 2px black;
   margin: 20px;
   padding: 10px;
   padding-left: 30px;
+  padding-bottom: 30px;
   box-shadow: 5px 10px aquamarine;
   align-self:center;
   transition:all .5s ease;
@@ -116,11 +117,13 @@ body {
   font-family: var(--fontStyle);
   padding: 30px 0 8px;
   position: relative;
+  margin: 0px;
 }
 
 .dish-info {
   grid-row: 2;
   grid-column: 1 / span 4;
+  margin: 0px;
 }
 
 /* Buttons */
