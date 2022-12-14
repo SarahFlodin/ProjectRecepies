@@ -97,7 +97,7 @@ header {
 #panic {
     width: 100px;
     height: 100px;
-    background-color: hotpink;
+    background-color: pink;
     border-radius: 50%;
     position: fixed;
     top: 75%;
