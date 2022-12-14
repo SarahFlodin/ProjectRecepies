@@ -28,7 +28,9 @@ function getDishes(){
             div.innerHTML=`
             <h3 class="dish-name">${dish.name} - ${dish.time} min</h3>
             <p class="dish-info">${dish.info}</p>
-            <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
+            <div class="img-tape img-tape--1">
+                <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
+            </div>
             `;
 
             //let dishDiv = document.querySelectorAll(".smallDishes");
