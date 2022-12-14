@@ -1,5 +1,6 @@
 :root {
   --fontStyle: 'Gloria Hallelujah', cursive;
+  --pinkColor: pink;
 }
 
 body {
@@ -105,7 +106,7 @@ body {
 
 .filterButton:after {
   content: "";
-  background-color: pink;
+  background-color: var(--pinkColor);
   width: 100%;
   z-index: -1;
   position: absolute;
