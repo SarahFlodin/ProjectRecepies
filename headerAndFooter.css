@@ -50,6 +50,12 @@ header {
     text-align: center;
 }
 
+#errorMessage,
+#errorMessage2 {
+    font-size: 0px;
+    margin: 0;
+}
+
 .exitLoggo {
     width: 40px;
     height: 40px;

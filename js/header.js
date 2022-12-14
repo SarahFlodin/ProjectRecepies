@@ -50,14 +50,16 @@ function login() {
     let exitLoggo = document.createElement("img");
     exitLoggo.src = "./images/exit.png";
     exitLoggo.classList.add("exitLoggo");
-    
+
     overlay.innerHTML = `
     <h1>Logga in</h1>
     <div id ="loginInput">
     <p>Användarnamn</p>
     <input id ="username" type="text">
+    <p id="errorMessage"></p>
     <p>Lösenord</p>
     <input id ="password" type="text">
+    <p id="errorMessage2"></p>
     
     <button id="login">Logga in</button>
     </div>
@@ -65,14 +67,39 @@ function login() {
     `;
     overlay.append(exitLoggo);
 
+    document.querySelector("#login").addEventListener("click", getUser);
+
     let switchToCreateAccount = document.querySelector("#ifNot");
-    switchToCreateAccount.addEventListener("click", function(){
+    switchToCreateAccount.addEventListener("click", function () {
         createAccount();
     })
     console.log("hey");
 }
 
-function createAccount(){
+function getUser() {
+    let username = document.querySelector("#username").value;
+    let password = document.querySelector("#password").value;
+
+    let rqst = new Request("./login.php");
+    fetch(rqst)
+
+        .then(r => r.json())
+        .then(resource => {
+            resource.forEach(user => {
+                if (username == user.userName && password == user.password) {
+                    console.log(`${user.userName} is inlogged`);
+                    //eller koppla till php error
+                    //få popup sidan att stängas ner
+                    //else satsen fungerar inte
+                } //else if (username != user.userName && password != user.password) {
+                //     document.querySelector("#errorMessage2").style.fontSize = "11px";
+                //     document.querySelector("#errorMessage2").innerHTML = `<p>Användaren hittas inte!</p>`;
+                // }
+            })
+        })
+}
+
+function createAccount() {
     let wrapper = document.querySelector("#popUp");
     let overlay = document.createElement("div");
     wrapper.append(overlay);
@@ -81,7 +108,7 @@ function createAccount(){
     let exitLoggo = document.createElement("img");
     exitLoggo.src = "./images/exit.png";
     exitLoggo.classList.add("exitLoggo");
-    
+
     overlay.innerHTML = `
     <h1>Skapa konto</h1>
     <div id ="loginInput">
@@ -98,7 +125,7 @@ function createAccount(){
     overlay.append(exitLoggo);
 
     let switchToCreateAccount = document.querySelector("#ifNot");
-    switchToCreateAccount.addEventListener("click", function(){
+    switchToCreateAccount.addEventListener("click", function () {
         login();
     })
 }
