@@ -30,6 +30,10 @@ function buildHeader() {
         //senare kanske en ifsats om du redan är inloggad
         login();
     });
+
+    document.querySelector(".favoritesLoggo").addEventListener("click", function () {
+        location.href = "./favorites.html";
+    })
 }
 
 //TO DO: fix exit

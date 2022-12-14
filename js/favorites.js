@@ -4,10 +4,8 @@ function getFavorites () {
     let rqst = new Request("./getUser.php");
     fetch(rqst)
     .then(r => r.json())
-    .then(resource => {
-        resource.forEach(user => {
-            
-        })
+    .then(user => {
+        console.log(user);
     });
 }
 
