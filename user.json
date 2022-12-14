@@ -4,5 +4,11 @@
         "userName": "Erik Pineiro",
         "password": "mau123",
         "favorites": [1, 4, 8, 16]
+    },
+    {
+        "userId": 2,
+        "userName": "Sofie Johansson",
+        "password": "fineapple",
+        "favorites": [13, 7, 2]
     }
 ]

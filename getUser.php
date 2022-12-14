@@ -22,6 +22,8 @@ if ($requestMethod == "GET") {
         $error = ["error" => "No user found!"];
         sendStatus($error, 404);
     } 
+
+    sendSTatus($users);
 }
 
 ?>
