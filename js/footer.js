@@ -1,9 +1,10 @@
 function buildFooter(){
     let footerdiv = document.querySelector("footer");
+    let year = new Date().getFullYear();
     footerdiv.innerHTML = `
-    <p>&copy;</p>
+    <p>${year} &copy;</p>
     <p>blabla@hotmail.com</p>`;
-    document.write(new Date().getFullYear());
+    
 
     let loggo = document.createElement("img");
     //BYT icon till en gratis
