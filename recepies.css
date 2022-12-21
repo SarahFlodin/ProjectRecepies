@@ -64,10 +64,49 @@ h1 {
 .dishIngredients {
     width: 50%;
 }
+
 .dishTodo {
     width: 100%;
 }
+
 .group{
     display: flex;
 }
 
+#commentDiv {
+    border: solid 1px black;
+    margin: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    box-shadow: 5px 10px rgb(226, 169, 245);
+    align-self: center;
+    background: transparent;
+    color: #41403E;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height: 1.5;
+}
+
+.comment {
+    border: solid 1px black;
+    margin: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    align-self: center;
+    background: transparent;
+    color: #41403E;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height: 1.5;
+}
+
+.comment h4 {
+    font-family: var(--fontStyle);
+    font-size: 10px;
+    color: lightgray;
+}
+
+.comment h3 {
+    font-family: var(--fontStyle);
+    color: rgb(226, 169, 245);
+}

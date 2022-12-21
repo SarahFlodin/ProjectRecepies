@@ -26,15 +26,16 @@ get_comment();
 
 
 function buildComments(comment) {
-    let div = document.createElement("div");
-    document.querySelector("#commentDiv").append(div);
+    let commentDiv = document.createElement("div");
+    commentDiv.classList.add("comment");
+    document.querySelector("#commentDiv").append(commentDiv);
     //TO DO: koppla userid med username
     //behöver först koppla/hitta den user
     //som har samma userId(user.json) som 
     //userId(comment.json) sen hämta namnet
     //därifrån
-    div.innerHTML = `
+    commentDiv.innerHTML = `
             <h3>${comment.userId}</h3>
-            <h3>${comment.date.year}-${comment.date.month}-${comment.date.day}</h3>
+            <h4>${comment.date.year}-${comment.date.month}-${comment.date.day}</h4>
             <p>${comment.message}</p>`;
 }
