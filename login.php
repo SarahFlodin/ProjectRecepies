@@ -9,22 +9,24 @@ if (file_exists("user.json")) {
     $users = json_decode($json, true);
 }
 
-if($requestMethod == "GET"){
+$requestData = file_get_contents("php://input");
+$_POST = json_decode($requestData, true);
 
-    $username = $_GET["userName"];
-    $password = $_GET["password"];
+if($requestMethod == "POST"){
+
+    $username = $_POST["userName"];
+    $password = $_POST["password"];
 
 
-    if(isset($password) && isset($username) ){
+    if(isset($password, $username) ){
         foreach($users as $user){
-            if($user["userName"] == $username && $user["password"] == $password){
+            if($user["userName"] == $username and $user["password"] == $password){
                 sendStatus($user);
-                }
             }
-            $error = ["error" => "Fälten stämmer inte överens!"];
-            sendStatus($error, 400);
         }
-        sendStatus($users);
+           
+    } 
+    $error = ["error" => "Användaren hittas inte!"];
+    sendStatus($error, 400);
 }
-
 ?>

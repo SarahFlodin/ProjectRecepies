@@ -37,31 +37,56 @@ header {
 .overlay {
     z-index: 10;
     background-color: rgb(255, 141, 160);
-    width: 45vw;
-    height: 80vh;
+    width: 360px;
+    height: 450px;
     border-radius: 10px;
     margin: 0;
-    display: block;
     position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .overlay>h1 {
-    margin-top: 65px;
-    text-align: center;
+    margin-top: 85px;
+    font-family: var(--fontStyle);
 }
 
-#errorMessage,
-#errorMessage2 {
-    font-size: 0px;
+.overlay2 {
+    z-index: 10;
+    background-color: rgb(255, 141, 160);
+    width: 360px;
+    height: 450px;
+    border-radius: 10px;
     margin: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
-.exitLoggo {
+.overlay2>h1 {
+    margin-top: 40px;
+    font-family: var(--fontStyle);
+}
+
+#errorMessage1,
+#errorMessage2,
+#errorMessage3 {
+    font-size: 0px;
+    margin-top: 1px;
+    height: 0px;
+    color: red;
+}
+
+.exitLoggo,
+.exitLoggo2 {
     width: 40px;
     height: 40px;
     top: 15px;
     right: 16px;
     position: absolute;
+    cursor: pointer;
 }
 
 #loginInput {
@@ -72,14 +97,19 @@ header {
 }
 
 #username,
+#newUser,
 #password,
+#newPassword,
 #repeatPassword {
-    width: 35vw;
+    width: 290px;
     height: 30px;
+    border-radius: 5px;
+    border: 1.5px solid black;
 }
 
-#login {
-    width: 36vw;
+#login,
+#createUser {
+    width: 297px;
     height: 30px;
     background-color: black;
     color: white;
@@ -89,15 +119,24 @@ header {
     font-weight: bold;
     margin-top: 15px;
     margin-bottom: 0px;
+    cursor: pointer;
 }
 
 #loginInput>p {
-    width: 36vw;
+    width: 290px;
+    margin-bottom: 3px;
 }
 
 #ifNot {
-    text-align: center;
     margin-top: 0px;
+    cursor: pointer;
+    display: inline-flex;
+}
+
+#ifNot2 {
+    margin-top: 0px;
+    cursor: pointer;
+    display: inline-flex;
 }
 
 #panic {
@@ -125,5 +164,3 @@ footer {
     width: 45px;
     height: 35px;
 }
-
-/*fixa till css*/
