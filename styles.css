@@ -167,3 +167,9 @@ body {
   left: 0px;
 }
 
+.favorites {
+  justify-items: center;
+  align-self: center;
+  grid-row: 1/ span 2;
+  grid-column: 7;
+}
