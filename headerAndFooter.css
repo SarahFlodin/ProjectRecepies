@@ -151,13 +151,14 @@ header {
 
 footer {
     width: 100vw;
-    height: 10vh;
+    height: 7vh;
     bottom: 0;
     background-color: pink;
     display: grid;
     align-items: center;
     justify-items: center;
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 20px;
 }
 
 .footerLoggo {
