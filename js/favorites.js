@@ -18,6 +18,9 @@ function getFavorites () {
                                 let div = document.createElement("div");
                                 div.classList.add("smallDishes");
 
+                                div.addEventListener("click", function(){
+                                    location.href = `./recepies.html?id=${dish.id}`;
+                                });
 
                                 document.querySelector("#recepies").append(div);
                                 div.innerHTML = `
