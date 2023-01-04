@@ -42,6 +42,18 @@ function buildHeader() {
             location.href = "./index.html";
         });
 
+        let div = document.createElement("div");
+        div.classList.add("loggOut");
+        document.querySelector(".headerdiv").append(div);
+        div.innerHTML = `
+            <img src="./images/loggout.png" alt="LogOut Button" width="150px" height="150px">
+        `
+
+        document.querySelector(".loggOut").addEventListener("click", function () {
+            window.localStorage.clear();
+            location.reload();
+        });
+
         let userLoggo = document.createElement("div");
         userLoggo.classList.add("userLoggo");
         header.append(userLoggo);

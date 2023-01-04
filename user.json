@@ -1,7 +1,7 @@
 [
     {
         "userId": 1,
-        "userName": "Erik Pineiro",
+        "userName": "ErikPineiro",
         "password": "mau123",
         "favorites": [
             1,
@@ -12,7 +12,7 @@
     },
     {
         "userId": 2,
-        "userName": "Sofie Johansson",
+        "userName": "SofieJohansson",
         "password": "fineapple",
         "favorites": [
             13,
@@ -22,7 +22,7 @@
     },
     {
         "userId": 3,
-        "userName": "Jane Doe",
+        "userName": "JaneDoe",
         "password": "mau124",
         "favorites": []
     },
@@ -30,6 +30,12 @@
         "userId": 4,
         "userName": "Test",
         "password": "mau124",
+        "favorites": []
+    },
+    {
+        "userId": 5,
+        "userName": "HannaNilsen",
+        "password": "123456",
         "favorites": []
     }
 ]
