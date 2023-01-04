@@ -18,10 +18,7 @@ function buildHeader() {
     `
     
 
-    let favoritesLoggo = document.createElement("img");
-    favoritesLoggo.src = "./images/heartloggo.png";
-    favoritesLoggo.classList.add("favoritesLoggo");
-    header.append(favoritesLoggo);
+    
 
     //TO DO: Lägg till namnet på sidan
 
@@ -34,9 +31,23 @@ function buildHeader() {
         login();
     });
 
-    document.querySelector(".favoritesLoggo").addEventListener("click", function () {
-        location.href = "./favorites.html";
-    })
+    
+}
+
+function addHeart () {
+    let id = window.localStorage.getItem("userId");
+    if (id > 0) {
+        let div = document.createElement("div");
+        div.classList.add("favoritesLoggo");
+        document.querySelector(".headerdiv").append(div);
+        div.innerHTML = `
+        <img src="./images/heartloggo.png" alt="green loggo" width="100px" height="100px">
+        `
+
+        document.querySelector(".favoritesLoggo").addEventListener("click", function () {
+            location.href = "./favorites.html";
+        })
+    }
 }
 
 function login() {
@@ -113,7 +124,8 @@ function getUser(event) {
                 document.querySelector(".userLoggo").innerHTML = `
                 <img src="./images/loggoactive.png" alt="green loggo" width="100px" height="100px">
                 <p>${resource.userName}</p>
-                `  
+                `
+                addHeart();
             } 
         })
 
