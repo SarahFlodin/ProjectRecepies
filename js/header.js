@@ -1,37 +1,56 @@
 function buildHeader() {
+    if (localStorage.length == 0) {
+        let headerDiv = document.querySelector("header");
+        let header = document.createElement("div");
+        header.classList.add("headerdiv");
 
-    let headerDiv = document.querySelector("header");
-    let header = document.createElement("div");
-    header.classList.add("headerdiv");
+        headerDiv.append(header);
 
-    headerDiv.append(header);
+        let loggo = document.createElement("img");
+        loggo.src = "./images/loggo.png";
+        loggo.classList.add("headerLoggo");
+        header.append(loggo);
+        let userLoggo = document.createElement("div");
+        userLoggo.classList.add("userLoggo");
+        header.append(userLoggo);
+        userLoggo.innerHTML = `
+            <img src="./images/userloggo.png" alt="green loggo" width="100px" height="100px">
+        `
 
-    let loggo = document.createElement("img");
-    loggo.src = "./images/loggo.png";
-    loggo.classList.add("headerLoggo");
-    header.append(loggo);
-    let userLoggo = document.createElement("div");
-    userLoggo.classList.add("userLoggo");
-    header.append(userLoggo);
-    userLoggo.innerHTML = `
-    <img src="./images/userloggo.png" alt="green loggo" width="100px" height="100px">
-    `
+        document.querySelector(".headerLoggo").addEventListener("click", function () {
+            location.href = "./index.html";
+        });
     
+        document.querySelector(".userLoggo").addEventListener("click", function () {
+            //senare kanske en ifsats om du redan är inloggad
+            login();
+        });
 
-    
+    } else if (localStorage.length > 0) {
+        let headerDiv = document.querySelector("header");
+        let header = document.createElement("div");
+        header.classList.add("headerdiv");
 
-    //TO DO: Lägg till namnet på sidan
+        headerDiv.append(header);
 
-    document.querySelector(".headerLoggo").addEventListener("click", function () {
-        location.href = "./index.html";
-    });
+        let loggo = document.createElement("img");
+        loggo.src = "./images/loggo.png";
+        loggo.classList.add("headerLoggo");
+        header.append(loggo);
 
-    document.querySelector(".userLoggo").addEventListener("click", function () {
-        //senare kanske en ifsats om du redan är inloggad
-        login();
-    });
+        document.querySelector(".headerLoggo").addEventListener("click", function () {
+            location.href = "./index.html";
+        });
 
-    
+        let userLoggo = document.createElement("div");
+        userLoggo.classList.add("userLoggo");
+        header.append(userLoggo);
+        userLoggo.innerHTML = `
+            <img src="./images/loggoactive.png" alt="green loggo" width="100px" height="100px">
+        `
+        addHeart();
+    }
+        //TO DO: Lägg till namnet på sidan   
 }
 
 function addHeart () {
@@ -116,19 +135,9 @@ function getUser(event) {
                 console.log(`Användaren ${user} är inloggad!`);
                 document.querySelector(".overlay").style.display = "none";
                 window.localStorage.setItem("userId", resource.userId);
+                location.reload()
             }
-            return resource;
         })
-        .then(resource => {
-            if (localStorage.length > 0) {
-                document.querySelector(".userLoggo").innerHTML = `
-                <img src="./images/loggoactive.png" alt="green loggo" width="100px" height="100px">
-                <p>${resource.userName}</p>
-                `
-                addHeart();
-            } 
-        })
-
 }
 
 function createAccount() {
