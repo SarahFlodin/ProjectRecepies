@@ -38,10 +38,10 @@ if($requestMethod == "POST"){
     //mellanrummen på användarna i user.json
     //för att inte kunna skapa en användare med
     //bara ett blankspace
-    // elseif(count(explode(' ', $newUsername)) > 1) {
-    //     $error1 = ["error1" => " Användarnament kan inte innehålla blankspace."];
-    //     sendStatus($error1, 406);
-    // }
+    elseif(count(explode(' ', $newUsername)) > 1) {
+        $error1 = ["error1" => " Användarnament kan inte innehålla blankspace."];
+        sendStatus($error1, 406);
+    }
 
     $newId = 0;
 
