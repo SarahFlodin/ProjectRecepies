@@ -100,6 +100,7 @@ function getUser() {
                 let user = resource.userName;
                 console.log(`Användaren ${user} är inloggad!`);
                 document.querySelector(".overlay").style.display = "none";
+                window.localStorage.setItem("userId", resource.userId);
             }
         })
 

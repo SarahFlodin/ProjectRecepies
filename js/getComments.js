@@ -1,3 +1,9 @@
+function commentBar () {
+   if (localStorage.length > 0) {
+    
+   } 
+}
+
 function get_comment() {
     let rqst = new Request("./getComments.php");
     fetch(rqst)
@@ -12,7 +18,6 @@ function get_comment() {
                 let id = idArray[1];
                 // console.log(id);
                 if (id == comment.dishId) {
-                    console.log(comment.message);
                     buildComments(comment);
                 };
             })
