@@ -10,10 +10,13 @@ function buildHeader() {
     loggo.src = "./images/loggo.png";
     loggo.classList.add("headerLoggo");
     header.append(loggo);
-    let userLoggo = document.createElement("img");
-    userLoggo.src = "./images/userloggo.png";
+    let userLoggo = document.createElement("div");
     userLoggo.classList.add("userLoggo");
     header.append(userLoggo);
+    userLoggo.innerHTML = `
+    <img src="./images/userloggo.png" alt="green loggo" width="100px" height="100px">
+    `
+    
 
     let favoritesLoggo = document.createElement("img");
     favoritesLoggo.src = "./images/heartloggo.png";
@@ -75,7 +78,8 @@ function login() {
     })
 }
 
-function getUser() {
+function getUser(event) {
+    event.preventDefault();
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
 
@@ -102,6 +106,15 @@ function getUser() {
                 document.querySelector(".overlay").style.display = "none";
                 window.localStorage.setItem("userId", resource.userId);
             }
+            return resource;
+        })
+        .then(resource => {
+            if (localStorage.length > 0) {
+                document.querySelector(".userLoggo").innerHTML = `
+                <img src="./images/loggoactive.png" alt="green loggo" width="100px" height="100px">
+                <p>${resource.userName}</p>
+                `  
+            } 
         })
 
 }
