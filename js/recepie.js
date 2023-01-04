@@ -13,7 +13,6 @@ function getDish() {
                 let id = idArray[1];
                 // console.log(id);
                 if (id == dish.id){
-                    console.log(dish.name);
                     buildDish(dish);
                 }
             })

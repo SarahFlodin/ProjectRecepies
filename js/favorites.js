@@ -1,6 +1,6 @@
 "use strict"
 
-let id = 1;
+let id = window.localStorage.getItem("userId");
 
 function getFavorites () {
     let rqst = new Request("./getUser.php");
