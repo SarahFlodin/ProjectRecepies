@@ -31,10 +31,22 @@ function getDishes(){
             <div class="img-tape img-tape--1">
                 <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
             </div>
-            <div class="favorites"> </div>
             `;
+            if (localStorage.getItem("userId")) {
+                let fav = document.createElement("div");
+            fav.classList.add("favorites");
+
+            fav.addEventListener("click", function(event){
+                event.stopPropagation();
+                fav.classList.toggle("liked");
+                fav.id = dish.id;
+            });
+               div.append(fav); 
+            }
             
-            document.querySelector(".favorites").addEventListener("click", liked);
+            // document.querySelectorAll(".favorites").map(fav => {
+            //     fav.addEventListener("click", liked);
+            // });
 
             //let dishDiv = document.querySelectorAll(".smallDishes");
 
@@ -62,10 +74,6 @@ filteredButtons.forEach(button => button.addEventListener("click", getDishes));
     //}
 //}
 
-function liked (event){
-    document.querySelector(".favorites").id = "liked";
-    event.stopImmediatePropagation();
-};
 
 getDishes();
 
