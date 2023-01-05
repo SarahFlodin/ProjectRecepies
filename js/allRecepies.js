@@ -16,6 +16,7 @@ function getDishes(){
 
             div.addEventListener("click", function(){
                 location.href = `./recepies.html?id=${dish.id}`;
+                
             });
             
             //div.setAttribute("id", `${dish.id}`)

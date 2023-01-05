@@ -3,11 +3,11 @@
     --pinkColor: #ffc0cb;
 }
 
-body{
+body {
     margin: 0px;
 }
 
-#wrapper{
+#wrapper {
     display: flex;
     flex-direction: column;
     padding: 5vw 15vw 7vw 15vw;
@@ -18,7 +18,7 @@ h1 {
     font-family: var(--fontStyle);
 }
 
-.dishIntro{
+.dishIntro {
     border: solid 1px rgb(0, 0, 0);
     margin: 20px;
     padding: 30px;
@@ -50,7 +50,7 @@ img.dish-img {
     place-items: center;
 }
 
-.dishAllergies{
+.dishAllergies {
     border: solid 1px black;
     margin: 20px;
     padding: 30px;
@@ -64,7 +64,8 @@ img.dish-img {
     line-height: 1.5;
 }
 
-.dishIngredients, .dishTodo{
+.dishIngredients,
+.dishTodo {
     border: solid 1px black;
     margin: 20px;
     padding: 30px;
@@ -86,7 +87,7 @@ img.dish-img {
     width: 100%;
 }
 
-.group{
+.group {
     display: flex;
 }
 
@@ -126,4 +127,14 @@ img.dish-img {
 .comment h3 {
     font-family: var(--fontStyle);
     color: rgb(226, 169, 245);
+}
+
+#commentInput {
+    height: 150px;
+    width: 70vw;
+}
+
+#commentButton {
+    height: 30px;
+    margin: 10px;
 }

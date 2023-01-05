@@ -41,6 +41,7 @@ if ($requestMethod == "POST") {
         echo json_encode($newComment);
         exit();
     }
+
 }
 
 ?>
