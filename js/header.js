@@ -47,7 +47,7 @@ function buildHeader() {
         document.querySelector(".headerdiv").append(div);
         div.innerHTML = `
             <img src="./images/loggout.png" alt="LogOut Button" width="150px" height="150px">
-        `
+        `;
 
         document.querySelector(".loggOut").addEventListener("click", function () {
             window.localStorage.clear();
@@ -59,7 +59,8 @@ function buildHeader() {
         header.append(userLoggo);
         userLoggo.innerHTML = `
             <img src="./images/loggoactive.png" alt="green loggo" width="100px" height="100px">
-        `
+        `;
+        userLoggo.style.cursor = "default";
         addHeart();
     }
         //TO DO: Lägg till namnet på sidan   

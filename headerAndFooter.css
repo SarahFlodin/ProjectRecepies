@@ -12,6 +12,7 @@ header {
     height: 150px;
     position: absolute;
     left: 2%;
+    cursor: pointer;
 }
 
 .headerdiv {
@@ -22,11 +23,17 @@ header {
 .userLoggo {
     width: 100px;
     height: 100px;
+    cursor: pointer;
 }
 
 .favoritesLoggo {
     width: 100px;
     height: 100px;
+    cursor: pointer;
+}
+
+.loggOut {
+    cursor: pointer;
 }
 
 #popUp {
@@ -147,6 +154,7 @@ header {
     position: fixed;
     top: 75%;
     left: 86%;
+    cursor: pointer;
 }
 
 footer {
