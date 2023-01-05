@@ -168,8 +168,25 @@ body {
 }
 
 .favorites {
-  justify-items: center;
   align-self: center;
   grid-row: 1/ span 2;
   grid-column: 7;
+  background-image: url("./images/heartloggoblack.png");
+  height: 100px;
+  width: 100px;
+  background-position: center;
+  background-size: cover;
+  z-index: 500;
+}
+
+#liked {
+  align-self: center;
+  grid-row: 1/ span 2;
+  grid-column: 7;
+  background-image: url("./images/heartloggofilled.png");
+  height: 100px;
+  width: 100px;
+  background-position: center;
+  background-size: cover;
+  z-index: 500;
 }

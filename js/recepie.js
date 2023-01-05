@@ -41,6 +41,7 @@ function buildDish(dish) {
     <h1>${dish.name}</h1>
     <p>Tillagningstid ca: ${dish.time} min <br> Pris för 4 portioner ca: ${dish.price} kr</p>
     <p>${dish.info}</p>
+    <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
     `;
 
 
