@@ -37,5 +37,11 @@
         "userName": "HannaNilsen",
         "password": "123456",
         "favorites": []
+    },
+    {
+        "userId": 6,
+        "userName": "SarahFlodin",
+        "password": "123456",
+        "favorites": []
     }
 ]
