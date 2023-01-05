@@ -98,7 +98,7 @@ function login() {
     <p>Användarnamn</p>
     <input id ="username" type="text">
     <p>Lösenord</p>
-    <input id ="password" type="text">
+    <input id ="password" type="password">
     <p id="errorMessage2"></p>
     
     <button id="login">Logga in</button>
@@ -169,9 +169,9 @@ function createAccount() {
     <input id ="newUser" type="text">
     <p id="errorMessage1"></p>
     <p>Ange lösenord</p>
-    <input id ="newPassword" type="text">
+    <input id ="newPassword" type="password">
     <p>Upprepa lösenord</p>
-    <input id ="repeatPassword" type="text">
+    <input id ="repeatPassword" type="password">
     <p id="errorMessage3"></p>
     <button id="createUser">Bli medlem</button>
     </div>
