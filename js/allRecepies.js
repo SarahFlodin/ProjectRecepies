@@ -33,16 +33,20 @@ function getDishes(){
                 <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
             </div>
             `;
+
             if (localStorage.getItem("userId")) {
                 let fav = document.createElement("div");
-            fav.classList.add("favorites");
+                fav.classList.add("favorites");
 
-            fav.addEventListener("click", function(event){
+                fav.addEventListener("click", function(event){
                 event.stopPropagation();
                 fav.classList.toggle("liked");
+
                 fav.id = dish.id;
+                console.log(dish.id)
             });
                div.append(fav); 
+               
             }
             
             // document.querySelectorAll(".favorites").map(fav => {

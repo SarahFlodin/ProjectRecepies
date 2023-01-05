@@ -37,6 +37,8 @@ function buildComments(comment) {
     let commentDiv = document.createElement("div");
     commentDiv.classList.add("comment");
     document.querySelector("#commentDiv").append(commentDiv);
+
+    
     //TO DO: koppla userid med username
     //behöver först koppla/hitta den user
     //som har samma userId(user.json) som 
@@ -44,8 +46,29 @@ function buildComments(comment) {
     //därifrån
     commentDiv.innerHTML = `
             <h3>${comment.userId}</h3>
-          
-            <p>${comment.message}</p>`;
+            <p>${comment.message}</p>
+            `;
+
+
+    if (localStorage.getItem("userId") == comment.userId) {
+        let buttons = document.createElement("div");
+        buttons.classList.add("commentButtons");
+
+        let edit = document.createElement("button");
+        edit.classList.add("edit");
+        edit.innerHTML = "Redigera kommentar";
+        edit.addEventListener("click", function(){});
+        buttons.append(edit);
+
+        let takeAway = document.createElement("button");
+        takeAway.classList.add("takeAway");
+        takeAway.innerHTML = "Radera kommentar";
+        takeAway.addEventListener("click", function(){});
+        buttons.append(takeAway);
+
+        commentDiv.append(buttons);
+    }        
+    
 }
 
 //   <h4>${comment.date.year}-${comment.date.month}-${comment.date.day}</h4>
