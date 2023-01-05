@@ -36,6 +36,7 @@ get_comment();
 function buildComments(comment) {
     let commentDiv = document.createElement("div");
     commentDiv.classList.add("comment");
+    document.querySelector("#commentDiv").innerHTML = "<h1>Kommentarer</h1>";
     document.querySelector("#commentDiv").append(commentDiv);
 
     

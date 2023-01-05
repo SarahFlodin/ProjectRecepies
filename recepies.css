@@ -5,6 +5,11 @@
 
 body {
     margin: 0px;
+    overflow-x: hidden;
+    background-image: url(./images/dottedbackground-light.png);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 7%;
 }
 
 #wrapper {
@@ -19,12 +24,12 @@ h1 {
 }
 
 .dishIntro {
+    background-color: white;
     border: solid 1px rgb(0, 0, 0);
     margin: 20px;
     padding: 30px;
     padding-left: 30px;
     box-shadow: 5px 10px rgb(226, 169, 245);
-    background: transparent;
     color: #41403E;
     outline: none;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -57,7 +62,7 @@ img.dish-img {
     padding-left: 30px;
     box-shadow: 5px 10px rgb(226, 169, 245);
     align-self: center;
-    background: transparent;
+    background-color: white;
     color: #41403E;
     outline: none;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -72,7 +77,7 @@ img.dish-img {
     padding-left: 30px;
     box-shadow: 5px 10px rgb(226, 169, 245);
     align-self: center;
-    background: transparent;
+    background-color: white;
     color: #41403E;
     outline: none;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -111,7 +116,7 @@ img.dish-img {
     padding: 30px;
     padding-left: 30px;
     align-self: center;
-    background: transparent;
+    background-color: white;
     color: #41403E;
     outline: none;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
@@ -124,17 +129,69 @@ img.dish-img {
     color: lightgray;
 }
 
+#commentDiv {
+    background-color: white;
+    width: 90%;
+
+}
+
 .comment h3 {
     font-family: var(--fontStyle);
     color: rgb(226, 169, 245);
 }
 
 #commentInput {
-    height: 150px;
-    width: 70vw;
+    border: solid 1px black;
+    margin: 20px;
+    padding: 30px;
+    padding-left: 30px;
+    align-self: center;
+    background-color: white;
+    color: #41403E;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height: 1.5;
+    width: 90%;
+    
 }
 
-#commentButton {
-    height: 30px;
-    margin: 10px;
-}
+
+button {
+    font-size: 16px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-weight: 200;
+    padding: 13px 50px 13px;
+    outline: 0;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    align-self:center;
+    background:transparent;
+    transition:all .5s ease;
+    color:#41403E;
+    letter-spacing:1px;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  }
+  
+  button:after {
+    content: "";
+    background-color: var(--pinkColor);
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 7px;
+    left: 7px;
+    transition: 0.2s;
+  }
+  
+  button:hover:after {
+    top: 0px;
+    left: 0px;
+  }

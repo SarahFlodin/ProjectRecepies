@@ -43,5 +43,11 @@
         "commentId": 5,
         "dishId": 2,
         "message": "hej"
+    },
+    {
+        "userId": 6,
+        "commentId": 6,
+        "dishId": 1,
+        "message": "Otroligt gott"
     }
 ]
