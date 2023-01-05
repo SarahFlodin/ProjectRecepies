@@ -32,7 +32,10 @@ function getDishes(){
             <div class="img-tape img-tape--1">
                 <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
             </div>
+            <div class="favorites"> </div>
             `;
+            
+            document.querySelector(".favorites").addEventListener("click", liked);
 
             //let dishDiv = document.querySelectorAll(".smallDishes");
 
@@ -59,6 +62,11 @@ filteredButtons.forEach(button => button.addEventListener("click", getDishes));
         //location.href = "recepies.html"
     //}
 //}
+
+function liked (event){
+    document.querySelector(".favorites").id = "liked";
+    event.stopImmediatePropagation();
+};
 
 getDishes();
 

@@ -24,12 +24,30 @@ h1 {
     padding: 30px;
     padding-left: 30px;
     box-shadow: 5px 10px rgb(226, 169, 245);
-    align-self: center;
     background: transparent;
     color: #41403E;
     outline: none;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     line-height: 1.5;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.dishIntro > h1 {
+    grid-column: 1/ span 2;
+}
+
+.dishIntro > p {
+    grid-column: 1/ span 2;
+} 
+
+img.dish-img {
+    grid-column: 3;
+    grid-row: 1/ span 3;
+    height: 20vh;
+    justify-self: center;
+    align-self: center;
+    place-items: center;
 }
 
 .dishAllergies {
