@@ -1,28 +1,31 @@
-function commentBar () {
-   if (localStorage.length > 0) {
-    
-   } 
+function commentBar() {
+    if (localStorage.length > 0) {
+
+    }
 }
 
 function get_comment() {
-    let rqst = new Request("./getComments.php");
+
+    let locationArray = location.href.split("?");
+    let idString = locationArray[1];
+    let idArray = idString.split("=");
+    let id = idArray[1];
+
+    let rqst = new Request(`./getComments.php?id=${id}`);
     fetch(rqst)
         .then(r => r.json())
-        .then(resource => {
-            resource.forEach(comment => {
-
-
-                let locationArray = location.href.split("?");
-                let idString = locationArray[1];
-                let idArray = idString.split("=");
-                let id = idArray[1];
-                // console.log(id);
-                if (id == comment.dishId) {
-                    buildComments(comment);
-                };
+        .then(comment => {
+            console.log(comment);
+            comment.forEach(comment => {
+                buildComments(comment);
             })
-            
-        });
+            if (comment.length == 0) {
+                document.querySelector("#commentDiv").innerHTML = `
+                <p>Det finns inga kommentater än!</p>
+                `;
+                ///FIXA så att den försvinner om man lägger till en kommentar efteråt
+            }
+        })
 
 };
 
@@ -41,6 +44,45 @@ function buildComments(comment) {
     //därifrån
     commentDiv.innerHTML = `
             <h3>${comment.userId}</h3>
-            <h4>${comment.date.year}-${comment.date.month}-${comment.date.day}</h4>
+          
             <p>${comment.message}</p>`;
+}
+
+//   <h4>${comment.date.year}-${comment.date.month}-${comment.date.day}</h4>
+
+
+let button = document.querySelector("#commentButton");
+button.addEventListener("click", comments_input);
+
+function comments_input() {
+    let message = document.querySelector("#commentInput").value;
+    let userId = window.localStorage.getItem("userId");
+
+    let locationArray = location.href.split("?");
+    let idString = locationArray[1];
+    let idArray = idString.split("=");
+    let id = idArray[1];
+
+    make_comment = {
+        userId: parseInt(userId),
+        message: message,
+        dishId: parseInt(id),
+    }
+
+    //att den endast ska skickas om jag trycker på skicka
+
+    let rqst = new Request("./createComment.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(make_comment)
+    });
+    fetch(rqst)
+        .then(r => r.json())
+        .then(resource => {
+
+            console.log(resource);
+            get_comment();
+        })
+    document.querySelector("#commentInput").value = "";
+
 }

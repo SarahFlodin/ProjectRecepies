@@ -18,11 +18,11 @@ if($requestMethod == "GET"){
                 sendStatus($recepie);
             }
         }
-        $error = ["error" => "Sorry! no recepies found with the id ${id}, please try again!"];
-        sendStatus($error, 404);
+        
 
     }
-  sendStatus($recepies);
+    $error = ["error" => "Sorry! no recepies found with the id ${id}, please try again!"];
+    sendStatus($error, 404);
 }
 
 ?>  

@@ -1,24 +1,17 @@
 function getDish() {
-    let rqst = new Request("./getOneRecepie.php");
+    let locationArray = location.href.split("?");
+            let idString = locationArray[1];
+            let idArray = idString.split("=");
+            let id = idArray[1];
+             console.log(id);
+    
+    let rqst = new Request(`./getOneRecepie.php?id=${id}`);
     fetch(rqst)
         .then(r => r.json())
-        .then(resource => {
-            resource.forEach(dish => {
-                // console.log(resource);
-                // console.log(location.href);
-
-                let locationArray = location.href.split("?");
-                let idString = locationArray[1];
-                let idArray = idString.split("=");
-                let id = idArray[1];
-                // console.log(id);
-                if (id == dish.id){
-                    buildDish(dish);
-                }
-            })
-
-        });
-
+        .then(dish => {
+            console.log(dish)
+            buildDish(dish);
+        })
 
 }
 
