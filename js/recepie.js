@@ -9,7 +9,7 @@ function getDish() {
     fetch(rqst)
         .then(r => r.json())
         .then(dish => {
-            console.log(dish)
+            //console.log(dish)
             buildDish(dish);
         })
 
