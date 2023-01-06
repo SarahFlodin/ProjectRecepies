@@ -156,7 +156,7 @@ img.dish-img {
 }
 
 
-button {
+#commentButton {
     font-size: 16px;
     margin-right: 10px;
     margin-top: 20px;
@@ -179,7 +179,7 @@ button {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
   }
   
-  button:after {
+  #commentButton:after {
     content: "";
     background-color: var(--pinkColor);
     width: 100%;
@@ -191,7 +191,69 @@ button {
     transition: 0.2s;
   }
   
-  button:hover:after {
+  #commentButton:hover:after {
     top: 0px;
     left: 0px;
   }
+
+
+
+/* CSS */
+button.edit, button.takeAway {
+  align-items: center;
+  background-color: #ffcccc;
+  background-position: 0 0;
+  border: 1px solid #ffadad;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #D33A2C;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 33.4929px;
+  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+  padding: 2px 12px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+  text-underline-offset: 1px;
+  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  word-break: break-word;
+}
+
+button.edit:active, button.takeAway:active,
+button.edit:hover, button.takeAway:hover,
+button.edit:focus, button.takeAway:focus {
+  outline: 0;
+}
+
+
+button.edit:active, button.takeAway:active {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+button.edit:hover, button.takeAway:hover {
+  background-color: #FFE3E3;
+  border-color: #f48585;
+}
+
+button.edit:active:hover, button.takeAway:active:hover,
+button.edit:focus:hover, button.takeAway:focus:hover,
+button.edit:focus,button.takeAway:focus {
+  background-color: #D33A2C;
+  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+  color: #FFFFFF;
+}
+
+div.commentButtons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
