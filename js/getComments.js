@@ -36,7 +36,6 @@ get_comment();
 function buildComments(comment) {
     let commentDiv = document.createElement("div");
     commentDiv.classList.add("comment");
-    document.querySelector("#commentDiv").innerHTML = "<h1>Kommentarer</h1>";
     document.querySelector("#commentDiv").append(commentDiv);
 
     
@@ -45,7 +44,7 @@ function buildComments(comment) {
     //som har samma userId(user.json) som 
     //userId(comment.json) sen hämta namnet
     //därifrån
-    commentDiv.innerHTML = `
+    commentDiv.innerHTML += `
             <h3>${comment.userId}</h3>
             <p>${comment.message}</p>
             `;
