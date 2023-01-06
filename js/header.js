@@ -51,7 +51,7 @@ function buildHeader() {
 
         document.querySelector(".loggOut").addEventListener("click", function () {
             window.localStorage.clear();
-            location.reload();
+            location.href = "./index.html";
         });
 
         let userLoggo = document.createElement("div");
