@@ -6,6 +6,8 @@ function commentBar() {
 
 function get_comment() {
 
+    document.querySelector("#commentDiv").innerHTML = "";
+
     let locationArray = location.href.split("?");
     let idString = locationArray[1];
     let idArray = idString.split("=");
@@ -15,7 +17,6 @@ function get_comment() {
     fetch(rqst)
         .then(r => r.json())
         .then(comment => {
-            console.log(comment);
             comment.forEach(comment => {
                 buildComments(comment);
             })
@@ -34,11 +35,14 @@ get_comment();
 
 
 function buildComments(comment) {
+
+    //Hämta alla användare
+    //om jag hämtar via local storage har alla kommentarer samma namn
     let commentDiv = document.createElement("div");
     commentDiv.classList.add("comment");
     document.querySelector("#commentDiv").append(commentDiv);
 
-    
+
     //TO DO: koppla userid med username
     //behöver först koppla/hitta den user
     //som har samma userId(user.json) som 
@@ -57,19 +61,84 @@ function buildComments(comment) {
         let edit = document.createElement("button");
         edit.classList.add("edit");
         edit.innerHTML = "Redigera kommentar";
-        edit.addEventListener("click", function(){});
+        edit.addEventListener("click", function () {
+
+            let save = document.createElement("button");
+            save.classList.add("save");
+            save.innerHTML = "Spara redigerad kommentar";
+
+            commentDiv.innerHTML = `
+            <h3>${comment.userId}</h3>
+            <p>${comment.message}</p>
+            <input id ="save" type="text">`;
+
+
+            commentDiv.append(save);
+            save.addEventListener("click", edit_comment(comment.commentId));
+
+        });
         buttons.append(edit);
 
         let takeAway = document.createElement("button");
         takeAway.classList.add("takeAway");
         takeAway.innerHTML = "Radera kommentar";
-        takeAway.addEventListener("click", function(){});
+        takeAway.addEventListener("click", function () {
+            delete_comment(comment.commentId);
+
+        });
         buttons.append(takeAway);
 
         commentDiv.append(buttons);
-    }        
-    
+    }
+
 }
+
+//Problem med att edit comments
+
+function edit_comment(commentId) {
+
+    let editedMessage = document.querySelector("#save").value;
+    console.log(editedMessage);
+
+    //först ändra till ett input field sen skicka med message därifrån
+
+
+    edit_message = {
+        message: editedMessage,
+        commentId: commentId,
+    }
+
+    let rqst = new Request("./editComment.php", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(edit_message)
+    });
+    fetch(rqst)
+        .then(r => r.json())
+        .then(resource => {
+            console.log(resource)
+            //get_comment();
+        })
+}
+
+function delete_comment(commentId) {
+    delete_message = {
+        commentId: commentId,
+    }
+
+    let rqst = new Request("./deleteComment.php", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(delete_message)
+    });
+    fetch(rqst)
+        .then(r => r.json())
+        .then(resource => {
+            console.log(resource)
+            get_comment();
+        })
+}
+
 
 //   <h4>${comment.date.year}-${comment.date.month}-${comment.date.day}</h4>
 
@@ -109,3 +178,8 @@ function comments_input() {
     document.querySelector("#commentInput").value = "";
 
 }
+
+console.log(localStorage);
+
+let find = localStorage.getItem("userName");
+console.log(find);

@@ -17,20 +17,13 @@ if ($requestMethod == "PATCH") {
    
     $commentId = $requestData["commentId"];
     $message = $requestData["message"];
-    $userId = $requestData["userId"];
 
-   if(isset($userId, $commentId, $message)){
+   if(isset($commentId, $message)){
 
         foreach($comments as $id => $comment) {
             if($comment["commentId"] == $commentId) {
                 $comment["message"] = $message;
                 $comments[$id] = $comment;
-                //TO DO: Fixa så att datum visas och
-                //ändrar sig,
-                //Ska vi ha något som visar på att den
-                //är redigerad?
-                //Typ någon kommentar på kommentaren
-                //som säger att den är edited
                 
                 $json = json_encode($comments, JSON_PRETTY_PRINT);
                 file_put_contents("comments.json", $json);

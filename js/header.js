@@ -150,6 +150,8 @@ function getUser(event) {
                 console.log(`Användaren ${user} är inloggad!`);
                 document.querySelector(".overlay").style.display = "none";
                 window.localStorage.setItem("userId", resource.userId);
+                window.localStorage.setItem("userName", resource.userName);
+                console.log(resource.userName);
                 location.reload()
             }
         })
