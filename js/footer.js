@@ -3,12 +3,12 @@ function buildFooter(){
     let year = new Date().getFullYear();
     footerdiv.innerHTML = `
     <p>&copy; ${year}</p>
-    <p>blabla@hotmail.com</p>`;
+    <p>yummytummy@hotmail.com</p>`;
     
 
     let loggo = document.createElement("img");
     //BYT icon till en gratis
-    loggo.src = "./images/loggo.png";
+    loggo.src = "./images/header.png";
     loggo.classList.add("footerLoggo");
     footerdiv.append(loggo);
 }

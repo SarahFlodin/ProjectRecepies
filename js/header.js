@@ -6,20 +6,21 @@ function buildHeader() {
 
         headerDiv.append(header);
 
-        let loggo = document.createElement("img");
-        loggo.src = "./images/loggo.png";
-        loggo.classList.add("headerLoggo");
-        header.append(loggo);
+        let headerPic = document.createElement("img");
+        headerPic.src = "./images/header.png";
+        headerPic.classList.add("headerPic");
+        header.append(headerPic);
+
+        document.querySelector(".headerPic").addEventListener("click", function () {
+            location.href = "./index.html";
+        });
+
         let userLoggo = document.createElement("div");
         userLoggo.classList.add("userLoggo");
         header.append(userLoggo);
         userLoggo.innerHTML = `
             <img src="./images/userloggo.png" alt="green loggo" width="100px" height="100px">
         `
-
-        document.querySelector(".headerLoggo").addEventListener("click", function () {
-            location.href = "./index.html";
-        });
     
         document.querySelector(".userLoggo").addEventListener("click", function () {
             //senare kanske en ifsats om du redan är inloggad
@@ -33,20 +34,21 @@ function buildHeader() {
 
         headerDiv.append(header);
 
-        let loggo = document.createElement("img");
-        loggo.src = "./images/loggo.png";
-        loggo.classList.add("headerLoggo");
-        header.append(loggo);
+        let headerPic = document.createElement("img");
+        headerPic.src = "./images/header.png";
+        headerPic.classList.add("headerPic");
+        header.append(headerPic);
 
-        document.querySelector(".headerLoggo").addEventListener("click", function () {
+        document.querySelector(".headerPic").addEventListener("click", function () {
             location.href = "./index.html";
         });
+
 
         let div = document.createElement("div");
         div.classList.add("loggOut");
         document.querySelector(".headerdiv").append(div);
         div.innerHTML = `
-            <img src="./images/loggout.png" alt="LogOut Button" width="150px" height="150px">
+            <img src="./images/loggout.png" alt="LogOut Button" width="40px" height="40px">
         `;
 
         document.querySelector(".loggOut").addEventListener("click", function () {

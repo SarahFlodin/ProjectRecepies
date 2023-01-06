@@ -7,11 +7,12 @@ header {
     justify-content: right;
 }
 
-.headerLoggo {
-    width: 150px;
-    height: 150px;
+
+.headerPic{
+    height: 9vw;
     position: absolute;
-    left: 2%;
+    left: 50%;
+    transform: translate(-50%);
     cursor: pointer;
 }
 
@@ -34,6 +35,10 @@ header {
 
 .loggOut {
     cursor: pointer;
+    height: 0px;
+    width: 0px;
+    z-index: 3;
+
 }
 
 #popUp {
@@ -43,7 +48,7 @@ header {
 
 .overlay {
     z-index: 10;
-    background-color: rgb(255, 141, 160);
+    background-color: #ff8da0;
     width: 360px;
     height: 450px;
     border-radius: 10px;
@@ -170,6 +175,5 @@ footer {
 }
 
 .footerLoggo {
-    width: 45px;
-    height: 35px;
+    height: 40px;
 }
