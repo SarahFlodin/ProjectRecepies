@@ -36,7 +36,7 @@
         "userId": 6,
         "commentId": 4,
         "dishId": 15,
-        "message": "<script>console.log(\"hej\")<\/script>"
+        "message":"Detta var inte gott. Jag suger heller p\u00e5 en krokodilsvans"
     },
     {
         "userId": 6,
@@ -49,5 +49,17 @@
         "commentId": 6,
         "dishId": 1,
         "message": "Otroligt gott"
+    },
+    {
+        "userId": 6,
+        "commentId": 7,
+        "dishId": 1,
+        "message": "Hej"
+    },
+    {
+        "userId": 6,
+        "commentId": 8,
+        "dishId": 1,
+        "message": "Hall\u00e5"
     }
 ]
