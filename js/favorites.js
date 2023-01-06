@@ -1,42 +1,43 @@
 "use strict"
 
-let id = window.localStorage.getItem("userId");
+function getFavorites() {
+    let id = window.localStorage.getItem("userId");
 
-function getFavorites () {
-    let rqst = new Request("./getUser.php");
+    let rqst = new Request(`./getUser.php?userId=${id}`);
     fetch(rqst)
-    .then(r => r.json())
-    .then(users => {
-        users.forEach(user => {
-            if (id == user.userId) {
-                fetch("./dishes.json")
-                .then(r => r.json())
-                .then(dishes => {
-                    dishes.forEach(dish => {
-                        user.favorites.forEach(favorite => {
-                            if (dish.id == favorite) {
-                                let div = document.createElement("div");
-                                div.classList.add("smallDishes");
+        .then(r => r.json())
+        .then(user => {
+            console.log(user);
+            console.log(user.favorites);
+            let favorites = user.favorites;
+            for (let i = 0; i < favorites.length; i++) {
+                let onefavorite = favorites[i];
+                console.log(onefavorite);
 
-                                div.addEventListener("click", function(){
-                                    location.href = `./recepies.html?id=${dish.id}`;
-                                });
+                let request = new Request(`./getOneRecepie.php?id=${onefavorite}`);
+                fetch(request)
+                    .then(r => r.json())
+                    .then(dish => {
+                        let div = document.createElement("div");
+                        div.classList.add("smallDishes");
 
-                                document.querySelector("#recepies").append(div);
-                                div.innerHTML = `
-                                <h3 class="dish-name">${dish.name} - ${dish.time} min</h3>
-                                <p class="dish-info">${dish.info}</p>
-                                <div class="img-tape img-tape--1">
-                                    <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
-                                </div>
-                                `;
-                            }
-                        })
+                        div.addEventListener("click", function () {
+                            location.href = `./recepies.html?id=${dish.id}`;
+                        });
+
+                        document.querySelector("#recepies").append(div);
+                        div.innerHTML = `
+                        <h3 class="dish-name">${dish.name} - ${dish.time} min</h3>
+                        <p class="dish-info">${dish.info}</p>
+                        <div class="img-tape img-tape--1">
+                            <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
+                        </div>
+                        `;
                     })
-                })
+
             }
         })
-    });
 }
+
 
 getFavorites();
