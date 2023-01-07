@@ -16,9 +16,9 @@ function get_comment() {
             })
             if (comment.length == 0) {
                 document.querySelector("#commentDiv").innerHTML = `
-                <p>Det finns inga kommentater än!</p>
+                <p>Det finns inga kommentarer än!</p>
                 `;
-                ///FIXA så att den försvinner om man lägger till en kommentar efteråt
+
             }
         })
 
@@ -26,15 +26,6 @@ function get_comment() {
 
 
 get_comment();
-// function getUserName () {
-//     fetch("user.json")
-//         .then(r => r.json())
-//         .then(users => {
-//             users.forEach(user => {          
-//                 buildComments(user);
-//             })
-//         })
-// }
 
 
 function buildComments(comment) {
@@ -56,7 +47,6 @@ function buildComments(comment) {
             <p>${comment.message}</p>
             `;
 
-
     if (localStorage.getItem("userId") == comment.userId) {
         let buttons = document.createElement("div");
         buttons.classList.add("commentButtons");
@@ -66,25 +56,34 @@ function buildComments(comment) {
         edit.innerHTML = "Redigera kommentar";
         edit.addEventListener("click", function () {
 
+            let editbox = document.createElement("div");
+            editbox.classList.add("editButtons");
+
             let save = document.createElement("button");
             save.classList.add("save");
-            save.innerHTML = "Spara redigerad kommentar";
+            save.innerHTML = "Spara";
+
+            let regret = document.createElement("button");
+            regret.classList.add("regret");
+            regret.innerHTML = "Ångra";
 
             commentDiv.innerHTML = `
             <h3>${comment.userId}</h3>
-            <p>${comment.message}</p>
-            <input id="saveEdit" type="text" placeholder="Redigera din kommentar...">`;
+            <p id="oldMessage">${comment.message}</p>
+            <input id="saveEdit" type="text" placeholder="Redigera din kommentar...">
+            <p id="errorMessage5"></p>`;
 
+            commentDiv.append(editbox);
 
-            commentDiv.append(save);
-            let editedInput = document.querySelector('input[id="saveEdit"]').value;
-                save.addEventListener("click", function(){
+            editbox.append(regret);
+            regret.addEventListener("click", get_comment);
 
-                    edit_comment(comment.commentId, editedInput);
+            editbox.append(save);
+            save.addEventListener("click", function () {
+                edit_comment(comment.commentId);
             })
-            
-
         });
+
         buttons.append(edit);
 
         let takeAway = document.createElement("button");
@@ -94,42 +93,36 @@ function buildComments(comment) {
             delete_comment(comment.commentId);
 
         });
-        buttons.append(takeAway);
 
+        buttons.append(takeAway);
         commentDiv.append(buttons);
     }
 
 }
 
-//Problem med att edit comments
+function edit_comment(commentId) {
+    let editedInput = document.querySelector("#saveEdit").value;
 
-function edit_comment(commentId, editedInput) {
-    console.log(editedInput);
+    edit_message = {
+        message: editedInput,
+        commentId: commentId,
+    }
 
-    //let editedMessage == input;
-    
-
-    //först ändra till ett input field sen skicka med message därifrån
-
-
-    // edit_message = {
-    //     message: editedInput,
-    //     commentId: commentId,
-    // }
-
-    const edited_rqst = new Request("./editComment.php", {
+    let edited_comment = new Request("./editComment.php", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            commentId: commentId,
-            message: editedInput
-        }),
+        body: JSON.stringify(edit_message)
     });
-    fetch(edited_rqst)
+    fetch(edited_comment)
         .then(r => r.json())
         .then(resource => {
-            console.log(resource)
-            //get_comment();
+            if (resource.error) {
+                document.querySelector("#errorMessage5").style.fontSize = "11px", height = "8px";
+                document.querySelector("#errorMessage5").innerHTML = `${resource.error}</p>`;
+            } else {
+                get_comment();
+            }
+
         })
 }
 
@@ -146,7 +139,6 @@ function delete_comment(commentId) {
     fetch(rqst)
         .then(r => r.json())
         .then(resource => {
-            console.log(resource)
             get_comment();
         })
 }
@@ -175,8 +167,6 @@ function comments_input() {
         dishId: parseInt(id),
     }
 
-    //att den endast ska skickas om jag trycker på skicka
-
     let rqst = new Request("./createComment.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -185,13 +175,16 @@ function comments_input() {
     fetch(rqst)
         .then(r => r.json())
         .then(resource => {
+            if (resource.error) {
+                document.querySelector("#errorMessage4").style.fontSize = "11px", height = "8px";
+                document.querySelector("#errorMessage4").style.color = "black";
+                document.querySelector("#errorMessage4").innerHTML = `${resource.error}</p>`;
+            } else {
+                document.querySelector("#errorMessage4").innerHTML = "";
+                get_comment();
+            }
 
-            console.log(resource);
-            get_comment();
         })
     document.querySelector("#commentInput").value = "";
-
-
-
 
 }

@@ -20,6 +20,11 @@ if ($requestMethod == "PATCH") {
 
    if(isset($commentId, $message)){
 
+    if($message == ""){
+        $error = ["error" => "Du måste fylla i fältet!"];
+        sendStatus($error, 404);
+    }
+
         foreach($comments as $id => $comment) {
             if($comment["commentId"] == $commentId) {
                 $comment["message"] = $message;

@@ -81,6 +81,36 @@
         "userId": 3,
         "commentId": 14,
         "dishId": 3,
-        "message": ""
+        "message": "mm"
+    },
+    {
+        "userId": 3,
+        "commentId": 15,
+        "dishId": 1,
+        "message": "Toppen"
+    },
+    {
+        "userId": 1,
+        "commentId": 18,
+        "dishId": 12,
+        "message": "mm, toppen gott!"
+    },
+    {
+        "userId": 3,
+        "commentId": 24,
+        "dishId": 12,
+        "message": "Mums vad gott"
+    },
+    {
+        "userId": 3,
+        "commentId": 25,
+        "dishId": 12,
+        "message": "Toppen gott!!!!!"
+    },
+    {
+        "userId": 3,
+        "commentId": 26,
+        "dishId": 14,
+        "message": "Mums"
     }
 ]
