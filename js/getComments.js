@@ -73,14 +73,15 @@ function buildComments(comment) {
             commentDiv.innerHTML = `
             <h3>${comment.userId}</h3>
             <p>${comment.message}</p>
-            <input id="save" type="text" placeholder="Redigera din kommentar...">`;
+            <input id="saveEdit" type="text" placeholder="Redigera din kommentar...">`;
 
 
             commentDiv.append(save);
-            let input = document.querySelector("#save").value;
-            if(input.length > 0){
-                save.addEventListener("click", edit_comment(comment.commentId));
-            }
+            let editedInput = document.querySelector('input[id="saveEdit"]').value;
+                save.addEventListener("click", function(){
+
+                    edit_comment(comment.commentId, editedInput);
+            })
             
 
         });
@@ -102,25 +103,29 @@ function buildComments(comment) {
 
 //Problem med att edit comments
 
-function edit_comment(commentId) {
+function edit_comment(commentId, editedInput) {
+    console.log(editedInput);
 
-    let editedMessage = document.querySelector("#save").value;
+    //let editedMessage == input;
     
 
     //först ändra till ett input field sen skicka med message därifrån
 
 
-    edit_message = {
-        message: editedMessage,
-        commentId: commentId,
-    }
+    // edit_message = {
+    //     message: editedInput,
+    //     commentId: commentId,
+    // }
 
-    let rqst = new Request("./editComment.php", {
+    const edited_rqst = new Request("./editComment.php", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(edit_message)
+        body: JSON.stringify({
+            commentId: commentId,
+            message: editedInput
+        }),
     });
-    fetch(rqst)
+    fetch(edited_rqst)
         .then(r => r.json())
         .then(resource => {
             console.log(resource)
