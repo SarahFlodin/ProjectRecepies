@@ -30,20 +30,20 @@ get_comment();
 
 function buildComments(comment) {
 
-    //Hämta alla användare
-    //om jag hämtar via local storage har alla kommentarer samma namn
+    let userId = comment.userId;
+
+    let rqst = new Request(`./getUser.php?userId=${userId}`);
+    fetch(rqst)
+    .then(r => r.json())
+    .then(resource => {
+        let profileName = resource.userName;
+   
     let commentDiv = document.createElement("div");
     commentDiv.classList.add("comment");
     document.querySelector("#commentDiv").append(commentDiv);
 
-
-    //TO DO: koppla userid med username
-    //behöver först koppla/hitta den user
-    //som har samma userId(user.json) som 
-    //userId(comment.json) sen hämta namnet
-    //därifrån
     commentDiv.innerHTML += `
-            <h3>${comment.userId}</h3>
+            <h3>${profileName}</h3>
             <p>${comment.message}</p>
             `;
 
@@ -68,8 +68,8 @@ function buildComments(comment) {
             regret.innerHTML = "Ångra";
 
             commentDiv.innerHTML = `
-            <h3>${comment.userId}</h3>
-            <input id="saveEdit" type="text" value="${comment.message}">
+            <h3>${profileName}</h3>
+            <textarea id="saveEdit" type="text">${comment.message} </textarea>
             <p id="errorMessage5"></p>`;
 
             commentDiv.append(editbox);
@@ -97,6 +97,7 @@ function buildComments(comment) {
         commentDiv.append(buttons);
     }
 
+})
 }
 
 function edit_comment(commentId) {

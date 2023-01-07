@@ -1,5 +1,3 @@
-"use strict"
-
 function getFavorites() {
     let id = window.localStorage.getItem("userId");
 
