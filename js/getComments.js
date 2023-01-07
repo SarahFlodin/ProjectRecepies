@@ -1,5 +1,3 @@
-"use strict"
-
 function get_comment() {
 
     document.querySelector("#commentDiv").innerHTML = "";
@@ -40,7 +38,7 @@ get_comment();
 
 
 function buildComments(comment) {
-    
+
     //Hämta alla användare
     //om jag hämtar via local storage har alla kommentarer samma namn
     let commentDiv = document.createElement("div");
@@ -75,11 +73,15 @@ function buildComments(comment) {
             commentDiv.innerHTML = `
             <h3>${comment.userId}</h3>
             <p>${comment.message}</p>
-            <input id ="save" type="text">`;
+            <input id="save" type="text" placeholder="Redigera din kommentar...">`;
 
 
             commentDiv.append(save);
-            save.addEventListener("click", edit_comment(comment.commentId));
+            let input = document.querySelector("#save").value;
+            if(input.length > 0){
+                save.addEventListener("click", edit_comment(comment.commentId));
+            }
+            
 
         });
         buttons.append(edit);
@@ -103,7 +105,7 @@ function buildComments(comment) {
 function edit_comment(commentId) {
 
     let editedMessage = document.querySelector("#save").value;
-    console.log(editedMessage);
+    
 
     //först ändra till ett input field sen skicka med message därifrån
 
@@ -144,48 +146,47 @@ function delete_comment(commentId) {
         })
 }
 
-
-//   <h4>${comment.date.year}-${comment.date.month}-${comment.date.day}</h4>
-
-
 let button = document.querySelector("#commentButton");
-button.addEventListener("click", comments_input);
+button.addEventListener("click", function () {
+    if (localStorage.length > 0) {
+        comments_input();
+    } else if (localStorage.length == 0) {
+        login();
+    }
+});
 
 function comments_input() {
-    if (localStorage.length > 0) {
-        let message = document.querySelector("#commentInput").value;
-        let userId = window.localStorage.getItem("userId");
+    let message = document.querySelector("#commentInput").value;
+    let userId = window.localStorage.getItem("userId");
 
-        let locationArray = location.href.split("?");
-        let idString = locationArray[1];
-        let idArray = idString.split("=");
-        let id = idArray[1];
+    let locationArray = location.href.split("?");
+    let idString = locationArray[1];
+    let idArray = idString.split("=");
+    let id = idArray[1];
 
-        make_comment = {
-            userId: parseInt(userId),
-            message: message,
-            dishId: parseInt(id),
-        }
+    make_comment = {
+        userId: parseInt(userId),
+        message: message,
+        dishId: parseInt(id),
+    }
 
-        //att den endast ska skickas om jag trycker på skicka
+    //att den endast ska skickas om jag trycker på skicka
 
-        let rqst = new Request("./createComment.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(make_comment)
-        });
-        fetch(rqst)
-            .then(r => r.json())
-            .then(resource => {
+    let rqst = new Request("./createComment.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(make_comment)
+    });
+    fetch(rqst)
+        .then(r => r.json())
+        .then(resource => {
 
-                console.log(resource);
-                get_comment();
-            })
-            document.querySelector("#commentInput").value = "";
+            console.log(resource);
+            get_comment();
+        })
+    document.querySelector("#commentInput").value = "";
 
-        } else if (localStorage.length == 0) {
-            login();
-        }
-    
+
+
 
 }

@@ -76,5 +76,11 @@
         "commentId": 13,
         "dishId": 11,
         "message": "Fy vad \u00e4ckligt det var att laga"
+    },
+    {
+        "userId": 3,
+        "commentId": 14,
+        "dishId": 3,
+        "message": ""
     }
 ]
