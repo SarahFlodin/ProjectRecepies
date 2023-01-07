@@ -22,29 +22,14 @@
     },
     {
         "userId": 3,
-        "userName": "JaneDoe",
-        "password": "mau124",
-        "favorites": [
-            8,
-            16
-        ]
+        "userName": "SarahFlodin",
+        "password": "123456",
+        "favorites": []
     },
     {
         "userId": 4,
-        "userName": "Test",
-        "password": "mau124",
-        "favorites": []
-    },
-    {
-        "userId": 5,
-        "userName": "HannaNilsen",
-        "password": "123456",
-        "favorites": []
-    },
-    {
-        "userId": 6,
-        "userName": "SarahFlodin",
-        "password": "123456",
+        "userName": "Clara",
+        "password": "mau123",
         "favorites": []
     }
 ]

@@ -8,7 +8,7 @@
     {
         "commentId": 2,
         "dishId": 10,
-        "userId": 1,
+        "userId": 2,
         "message": "Gillades av alla i familjen. K\u00f6rde p\u00e5 l\u00e5rfileer, men det gick bra det med."
     },
     {
@@ -20,13 +20,13 @@
     {
         "commentId": 4,
         "dishId": 11,
-        "userId": 1,
-        "message": "Goda smaker, l\u00e4tt att g\u00f6ra. Anv\u00e4nde kycklingfil\u00e9 i bitar med kebabkrydda i st\u00e4llet. Br\u00f6det var ingen h\u00f6jdare, lite \u201dmastigt\u201d f\u00f6r min smak."
+        "userId": 4,
+        "message": "Goda smaker, l\u00e4tt att g\u00f6ra. Anv\u00e4nde kycklingfil\u00e9 i bitar med kebabkrydda i st\u00e4llet. Br\u00f6det var ingen h\u00f6jdare, lite \u201dmastigt\u201d f\u00f6r min smak. gg"
     },
     {
         "commentId": 5,
         "dishId": 12,
-        "userId": 1,
+        "userId": 3,
         "message": "Jag bytte ut samtliga ingredienser och gjorde k\u00f6ttf\u00e4rss\u00e5s och spagetti. Det blev j\u00e4ttegott"
     },
     {
@@ -38,19 +38,19 @@
     {
         "commentId": 7,
         "dishId": 12,
-        "userId": 1,
+        "userId": 2,
         "message": "Supergott tycker alla i familjen! Har alltid i curry!"
     },
     {
         "commentId": 8,
         "dishId": 15,
-        "userId": 1,
+        "userId": 3,
         "message": "J\u00e4ttegod risotto!! Jag anv\u00e4nde kantarellfond och tog en liten klick tryffelmajon\u00e4s till entrecoten. S\u00e5 uts\u00f6kta smaker tillsammans!"
     },
     {
         "commentId": 9,
         "dishId": 15,
-        "userId": 1,
+        "userId": 4,
         "message": "Jag f\u00f6redrar att ha svampen f\u00e4rdigstekt innan. Det blir gott att f\u00f6rst steka svampen utan sm\u00f6r s\u00e5 att v\u00e4tskan reduceras, d\u00e4refter addera sm\u00f6r och krydda."
     },
     {
@@ -62,13 +62,13 @@
     {
         "commentId": 11,
         "dishId": 15,
-        "userId": 1,
+        "userId": 2,
         "message": "Varf\u00f6r f\u00f6rst\u00f6ra hela r\u00e4tten med senapsk\u00e5l!"
     },
     {
         "commentId": 12,
         "dishId": 14,
-        "userId": 1,
+        "userId": 3,
         "message": "Ov\u00e4ntat gott recept med tydliga asiatiska toner"
     },
     {
@@ -76,53 +76,5 @@
         "commentId": 13,
         "dishId": 11,
         "message": "Fy vad \u00e4ckligt det var att laga"
-    },
-    {
-        "userId": 3,
-        "commentId": 14,
-        "dishId": 3,
-        "message": "mm"
-    },
-    {
-        "userId": 3,
-        "commentId": 15,
-        "dishId": 1,
-        "message": "Toppen"
-    },
-    {
-        "userId": 1,
-        "commentId": 18,
-        "dishId": 12,
-        "message": "mm, toppen gott!"
-    },
-    {
-        "userId": 3,
-        "commentId": 24,
-        "dishId": 12,
-        "message": "Mums vad gott"
-    },
-    {
-        "userId": 3,
-        "commentId": 25,
-        "dishId": 12,
-        "message": "Toppen gott!!!!!"
-    },
-    {
-        "userId": 3,
-        "commentId": 26,
-        "dishId": 14,
-        "message": "Mums"
-    },
-    {
-        "userId": 6,
-        "commentId": 27,
-        "dishId": 1,
-        "message": "neje"
-    },
-    {
-        "userId": 2,
-        "commentId": 28,
-        "dishId": 1,
-        "message": "HejSan"
     }
 ]
