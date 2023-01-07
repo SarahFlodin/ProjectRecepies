@@ -69,8 +69,7 @@ function buildComments(comment) {
 
             commentDiv.innerHTML = `
             <h3>${comment.userId}</h3>
-            <p id="oldMessage">${comment.message}</p>
-            <input id="saveEdit" type="text" placeholder="Redigera din kommentar...">
+            <input id="saveEdit" type="text" value="${comment.message}">
             <p id="errorMessage5"></p>`;
 
             commentDiv.append(editbox);
