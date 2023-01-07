@@ -1,15 +1,40 @@
 header {
     width: 100vw;
-    height: 20vh;
+    height: 30vh;
     bottom: 0;
     background-color: #ffc0cb;
     display: flex;
     justify-content: right;
+    position: relative;
 }
+
+   
+  .wave::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: repeat;
+    height: 10px;
+    background-size: 20px 20px;
+    background-image:
+     radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
+  }
+  .wave::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat: repeat;
+    background-image:
+      radial-gradient(circle at 10px 15px, #fff 12px, transparent 13px);
+  }
 
 
 .headerPic{
-    height: 9vw;
+    height: 12vw;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
