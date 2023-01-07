@@ -24,6 +24,16 @@ function getFavorites() {
                         div.addEventListener("click", function () {
                             location.href = `./recepies.html?id=${dish.id}`;
                         });
+                        
+                        let fav = document.createElement("div");
+                        fav.classList.add("liked");
+
+                        fav.addEventListener("click", function(event){
+                            event.stopPropagation();
+
+                            fav.id = dish.id;
+                            console.log(dish.id)
+                        });
 
                         document.querySelector("#recepies").append(div);
                         div.innerHTML = `
@@ -31,8 +41,10 @@ function getFavorites() {
                         <p class="dish-info">${dish.info}</p>
                         <div class="img-tape img-tape--1">
                             <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
-                        </div>
-                        `;
+                        </div>`;
+
+                        div.append(fav); 
+                        
                     })
 
             }
