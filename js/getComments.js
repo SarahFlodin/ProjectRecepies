@@ -1,8 +1,4 @@
-function commentBar() {
-    if (localStorage.length > 0) {
-
-    }
-}
+"use strict"
 
 function get_comment() {
 
@@ -32,10 +28,19 @@ function get_comment() {
 
 
 get_comment();
+// function getUserName () {
+//     fetch("user.json")
+//         .then(r => r.json())
+//         .then(users => {
+//             users.forEach(user => {          
+//                 buildComments(user);
+//             })
+//         })
+// }
 
 
 function buildComments(comment) {
-
+    
     //Hämta alla användare
     //om jag hämtar via local storage har alla kommentarer samma namn
     let commentDiv = document.createElement("div");
@@ -147,39 +152,40 @@ let button = document.querySelector("#commentButton");
 button.addEventListener("click", comments_input);
 
 function comments_input() {
-    let message = document.querySelector("#commentInput").value;
-    let userId = window.localStorage.getItem("userId");
+    if (localStorage.length > 0) {
+        let message = document.querySelector("#commentInput").value;
+        let userId = window.localStorage.getItem("userId");
 
-    let locationArray = location.href.split("?");
-    let idString = locationArray[1];
-    let idArray = idString.split("=");
-    let id = idArray[1];
+        let locationArray = location.href.split("?");
+        let idString = locationArray[1];
+        let idArray = idString.split("=");
+        let id = idArray[1];
 
-    make_comment = {
-        userId: parseInt(userId),
-        message: message,
-        dishId: parseInt(id),
-    }
+        make_comment = {
+            userId: parseInt(userId),
+            message: message,
+            dishId: parseInt(id),
+        }
 
-    //att den endast ska skickas om jag trycker på skicka
+        //att den endast ska skickas om jag trycker på skicka
 
-    let rqst = new Request("./createComment.php", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(make_comment)
-    });
-    fetch(rqst)
-        .then(r => r.json())
-        .then(resource => {
+        let rqst = new Request("./createComment.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(make_comment)
+        });
+        fetch(rqst)
+            .then(r => r.json())
+            .then(resource => {
 
-            console.log(resource);
-            get_comment();
-        })
-    document.querySelector("#commentInput").value = "";
+                console.log(resource);
+                get_comment();
+            })
+            document.querySelector("#commentInput").value = "";
+
+        } else if (localStorage.length == 0) {
+            login();
+        }
+    
 
 }
-
-console.log(localStorage);
-
-let find = localStorage.getItem("userName");
-console.log(find);
