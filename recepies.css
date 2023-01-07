@@ -15,8 +15,12 @@ body {
 #wrapper {
     display: flex;
     flex-direction: column;
-    padding: 5vw 15vw 7vw 15vw;
+    padding: 0vw 15vw 7vw 15vw;
     align-items: center;
+}
+
+#recepie {
+    margin-top: 5vw;
 }
 
 h1 {
@@ -38,13 +42,13 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.dishIntro > h1 {
+.dishIntro>h1 {
     grid-column: 1/ span 2;
 }
 
-.dishIntro > p {
+.dishIntro>p {
     grid-column: 1/ span 2;
-} 
+}
 
 img.dish-img {
     grid-column: 3;
@@ -152,7 +156,18 @@ img.dish-img {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
     line-height: 1.5;
     width: 90%;
-    
+}
+
+#saveEdit {
+    border: solid 1px black;
+    margin: 10px;
+    padding: 20px;
+    background-color: white;
+    color: #41403E;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    line-height: 1.5;
+    width: 85%;
 }
 
 
@@ -171,15 +186,15 @@ img.dish-img {
     user-select: none;
     -webkit-user-select: none;
     touch-action: manipulation;
-    align-self:center;
-    background:transparent;
-    transition:all .5s ease;
-    color:#41403E;
-    letter-spacing:1px;
+    align-self: center;
+    background: transparent;
+    transition: all .5s ease;
+    color: #41403E;
+    letter-spacing: 1px;
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  }
-  
-  #commentButton:after {
+}
+
+#commentButton:after {
     content: "";
     background-color: var(--pinkColor);
     width: 100%;
@@ -189,71 +204,107 @@ img.dish-img {
     top: 7px;
     left: 7px;
     transition: 0.2s;
-  }
-  
-  #commentButton:hover:after {
+}
+
+#commentButton:hover:after {
     top: 0px;
     left: 0px;
-  }
-
-
-
-/* CSS */
-button.edit, button.takeAway {
-  align-items: center;
-  background-color: #ffcccc;
-  background-position: 0 0;
-  border: 1px solid #ffadad;
-  border-radius: 11px;
-  box-sizing: border-box;
-  color: #D33A2C;
-  cursor: pointer;
-  display: flex;
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 33.4929px;
-  list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
-  padding: 2px 12px;
-  text-align: left;
-  text-decoration: none;
-  text-shadow: none;
-  text-underline-offset: 1px;
-  transition: border .2s ease-in-out,box-shadow .2s ease-in-out;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  word-break: break-word;
 }
 
-button.edit:active, button.takeAway:active,
-button.edit:hover, button.takeAway:hover,
-button.edit:focus, button.takeAway:focus {
-  outline: 0;
+button.edit,
+button.takeAway,
+.save,
+.regret {
+    align-items: center;
+    background-color: #ffcccc;
+    background-position: 0 0;
+    border: 1px solid #ffadad;
+    border-radius: 11px;
+    box-sizing: border-box;
+    color: #D33A2C;
+    cursor: pointer;
+    display: flex;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 33.4929px;
+    list-style: outside url(https://www.smashingmagazine.com/images/bullet.svg) none;
+    padding: 2px 12px;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    text-underline-offset: 1px;
+    transition: border .2s ease-in-out, box-shadow .2s ease-in-out;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    word-break: break-word;
+}
+
+#oldMessage {
+    color: rgb(161, 159, 159);
+}
+
+#errorMessage4 {
+    margin: 0px;
+    color: white;
+    position: relative;
+    right: 40%;
+    height: 0;
+}
+
+#errorMessage5 {
+    font-size: 0px;
+    margin-top: 1px;
+    height: 0px;
+    margin-left: 10px;
+    color: black;
+}
+
+button.edit:active,
+button.takeAway:active,
+button.edit:hover,
+button.takeAway:hover,
+button.edit:focus,
+button.takeAway:focus {
+    outline: 0;
 }
 
 
-button.edit:active, button.takeAway:active {
-  background-color: #D33A2C;
-  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
-  color: #FFFFFF;
+button.edit:active,
+button.takeAway:active {
+    background-color: #D33A2C;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+    color: #FFFFFF;
 }
 
-button.edit:hover, button.takeAway:hover {
-  background-color: #FFE3E3;
-  border-color: #f48585;
+button.edit:hover,
+button.takeAway:hover {
+    background-color: #FFE3E3;
+    border-color: #f48585;
 }
 
-button.edit:active:hover, button.takeAway:active:hover,
-button.edit:focus:hover, button.takeAway:focus:hover,
-button.edit:focus,button.takeAway:focus {
-  background-color: #D33A2C;
-  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
-  color: #FFFFFF;
+button.edit:active:hover,
+button.takeAway:active:hover,
+button.edit:focus:hover,
+button.takeAway:focus:hover,
+button.edit:focus,
+button.takeAway:focus {
+    background-color: #D33A2C;
+    box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
+    color: #FFFFFF;
 }
 
-div.commentButtons{
+div.commentButtons {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+}
+
+div.editButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    margin-right: 20px;
     gap: 10px;
 }

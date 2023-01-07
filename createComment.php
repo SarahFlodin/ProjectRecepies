@@ -20,6 +20,11 @@ if ($requestMethod == "POST") {
     $dishId = $_POST["dishId"];
 
     if(isset($userId, $message, $dishId)) {
+
+        if($message == ""){
+            $error = ["error" => "Du måste fylla i fältet!"];
+            sendStatus($error, 404);
+        }
        
         $newId = 0;
 
