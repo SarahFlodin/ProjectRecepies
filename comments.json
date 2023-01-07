@@ -118,5 +118,11 @@
         "commentId": 27,
         "dishId": 1,
         "message": "neje"
+    },
+    {
+        "userId": 2,
+        "commentId": 28,
+        "dishId": 1,
+        "message": "HejSan"
     }
 ]

@@ -241,10 +241,6 @@ button.takeAway,
     word-break: break-word;
 }
 
-#oldMessage {
-    color: rgb(161, 159, 159);
-}
-
 #errorMessage4 {
     margin: 0px;
     color: white;
