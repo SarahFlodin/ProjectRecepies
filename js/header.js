@@ -23,7 +23,6 @@ function buildHeader() {
         `
     
         document.querySelector(".userLoggo").addEventListener("click", function () {
-            //senare kanske en ifsats om du redan är inloggad
             login();
         });
 
