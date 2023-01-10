@@ -141,7 +141,6 @@ function getUser(event) {
         .then(r => r.json())
         .then(resource => {
             if (resource.error) {
-                console.log(resource.error);
                 document.querySelector("#errorMessage2").style.fontSize = "11px", height = "8px";
                 document.querySelector("#errorMessage2").innerHTML = `${resource.error}</p>`;
             } else {
@@ -150,7 +149,7 @@ function getUser(event) {
                 document.querySelector(".overlay").style.display = "none";
                 window.localStorage.setItem("userId", resource.userId);
                 window.localStorage.setItem("userName", resource.userName);
-                console.log(resource.userName);
+                window.localStorage.setItem("favorites", resource.favorites);
                 location.reload()
             }
         })

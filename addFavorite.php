@@ -27,7 +27,6 @@ if($requestedMethod == "POST"){
                 $favorites = $user["favorites"];
                 array_push($favorites, $dishId);
                 $updated = $favorites;
-                var_dump($dishId);
                 $user["favorites"] = $updated;
                 $users[$number] = $user;
                         

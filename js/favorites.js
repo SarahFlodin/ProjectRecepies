@@ -29,8 +29,9 @@ function getFavorites() {
                         fav.addEventListener("click", function(event){
                             event.stopPropagation();
 
-                            fav.id = dish.id;
-                            console.log(dish.id)
+                            console.log(dish.id);
+
+                            delete_favorite(id, dish.id);
                         });
 
                         document.querySelector("#recepies").append(div);
@@ -49,5 +50,24 @@ function getFavorites() {
         })
 }
 
+function delete_favorite(id, dishId){
+
+    let request = new Request("./deleteFavorite.php", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            userId: id,
+            dishId: dishId
+        }),
+    });
+
+    fetch(request)
+        .then(r => r.json())
+        .then(resource => {
+            getFavorites();
+        });
+}
+
 
 getFavorites();
+
