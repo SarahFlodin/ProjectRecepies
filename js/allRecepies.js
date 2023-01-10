@@ -9,6 +9,10 @@ function getDishes(){
         if (value){
            filtered = resource.filter(dish => dish.category == value) 
         }
+
+        let favoriteId = localStorage.getItem("favorites");
+
+        console.log(favoriteId);
         
         filtered.forEach(dish => {
             let div = document.createElement("div");
@@ -20,7 +24,6 @@ function getDishes(){
             });
             
             //div.setAttribute("id", `${dish.id}`)
-
 
             document.querySelector("#recepies").append(div);
             //TO DO:
@@ -43,7 +46,25 @@ function getDishes(){
                 fav.classList.toggle("liked");
 
                 fav.id = dish.id;
-                console.log(dish.id)
+                //console.log(dish.id);
+
+                let userId = localStorage.getItem("userId");
+                
+                post_favorite = {
+                    dishId: dish.id,
+                    userId: userId
+                }
+
+                let request = new Request("./addFavorite.php", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(post_favorite)
+                });
+                fetch(request)
+                    .then(r => r.json())
+                    .then(resource => {
+                        console.log(resource);
+                    })
             });
                div.append(fav); 
                
