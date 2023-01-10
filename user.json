@@ -5,9 +5,9 @@
         "password": "mau123",
         "favorites": [
             1,
-            4,
             8,
-            16
+            16,
+            4
         ]
     },
     {
