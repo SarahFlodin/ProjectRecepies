@@ -1,3 +1,8 @@
+function back() {
+    window.history.back();
+}
+
+
 function buildHeader() {
     if (localStorage.length == 0) {
         let headerDiv = document.querySelector("header");
