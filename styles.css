@@ -190,3 +190,10 @@ body {
   background-size: cover;
   z-index: 500;
 }
+ .noFavorites{
+  background-image: url("./images/noFavorites.png");
+  height: 60vh;
+  width: 50vw;
+  background-position: center;
+  background-size: cover;
+ }
