@@ -15,17 +15,24 @@ if (file_exists("user.json")) {
 $requestJson = file_get_contents("php://input");
 $requestedData = json_decode($requestJson, true);
 
-if($requestedMethod == "DELETE"){
+
 
     $dishId = $requestedData["dishId"];
     $userId = $requestedData["userId"];
+if ($requestedMethod == "DELETE") {
 
-    if(isset($dishId, $userId)){
+
+    if(isset($requestedData["dishId"], $requestedData["userId"])){
+        
         foreach($users as $number => $user){
-           if($number == $userId - 1){
+            
+            if($user["userId"] == $userId){
+            
                 $favorites = $user["favorites"];
                 foreach($favorites as $index => $favorite){
+                    
                     if($favorite == $dishId){
+                        
                         array_splice($favorites, $index, 1);
                         $updated = $favorites;
                         $user["favorites"] = $updated;
@@ -33,14 +40,15 @@ if($requestedMethod == "DELETE"){
                         
                         $json = json_encode($users, JSON_PRETTY_PRINT);
                         file_put_contents("user.json", $json);
+                        sendStatus($user);
                     }
                 }
             }
         }
 
     }
-
-    $error = ["error" => "Bad Request"];
-    sendStatus($error, 400);
-
+    
 }
+
+$error = ["error" => "Bad Request"];
+sendStatus($error, 400);

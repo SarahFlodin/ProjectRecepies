@@ -73,7 +73,8 @@ function buildHeader() {
 }
 
 function addHeart () {
-    let id = window.localStorage.getItem("userId");
+    let user = JSON.parse(window.localStorage.getItem("user"));
+    let id = user.userId;
     if (id > 0) {
         let div = document.createElement("div");
         div.classList.add("favoritesLoggo");
@@ -152,9 +153,8 @@ function getUser(event) {
                 let user = resource.userName;
                 console.log(`Användaren ${user} är inloggad!`);
                 document.querySelector(".overlay").style.display = "none";
-                window.localStorage.setItem("userId", resource.userId);
-                window.localStorage.setItem("userName", resource.userName);
-                window.localStorage.setItem("favorites", resource.favorites);
+                window.localStorage.setItem("user", JSON.stringify(resource));
+                console.log(resource);
                 location.reload()
             }
         })

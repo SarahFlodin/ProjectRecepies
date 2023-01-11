@@ -1,6 +1,6 @@
 <?php
 
-ini_set("display_errors", 1);
+//ini_set("display_errors", 1);
 
 require_once "functions.php";
 
@@ -21,23 +21,21 @@ if($requestedMethod == "POST"){
     $dishId = $requestedData["dishId"];
     $userId = $requestedData["userId"];
 
-    if(isset($dishId, $userId)){
+    if(isset($requestedData["dishId"], $requestedData["userId"])){
         foreach($users as $number => $user){
-            if($number == $userId - 1){
+            if($userId == $user["userId"]){
                 $favorites = $user["favorites"];
-                array_push($favorites, $dishId);
+                $favorites[] = $dishId;
                 $updated = $favorites;
                 $user["favorites"] = $updated;
                 $users[$number] = $user;
                         
                 $json = json_encode($users, JSON_PRETTY_PRINT);
-                file_put_contents("user.json", $json); 
+                file_put_contents("user.json", $json);
+                sendStatus($user); 
             }
         }
 
     }
 
-    $error = ["error" => "Not Found"];
-    sendStatus($error, 404);
-
-}
+} 

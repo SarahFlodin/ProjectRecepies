@@ -13,10 +13,10 @@ function getDishes(){
            filtered = resource.filter(dish => dish.category == value) 
         }
 
-        let favoriteArray = localStorage.getItem("favorites");
+        
 
         // let found = favoriteArray.find()
-        
+
         filtered.forEach(dish => {
             let div = document.createElement("div");
             div.classList.add("smallDishes");
@@ -40,37 +40,51 @@ function getDishes(){
             </div>
             `;
 
-            if (localStorage.getItem("userId")) {
+            if (localStorage.getItem("user")) {
+                let user = JSON.parse(localStorage.getItem("user"));
                 let fav = document.createElement("div");
                 fav.classList.add("favorites");
 
-                fav.addEventListener("click", function(event){
-                    
-                    event.stopPropagation();
-                    fav.classList.toggle("liked");
-
-                    fav.id = dish.id;
-                    //console.log(dish.id);
-
-                    let userId = localStorage.getItem("userId");
-                    
-                    post_favorite = {
-                        dishId: dish.id,
-                        userId: userId
+                user.favorites.forEach(id => {
+                    if (id == dish.id) {
+                        fav.classList.add("liked");
                     }
+                });    
 
-                    let request = new Request("./addFavorite.php", {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify(post_favorite)
-                    });
+                fav.addEventListener("click", function(event){
+                    if (fav.classList.contains("liked")) {
+                        event.stopPropagation();
+                        delete_favorite_homepage(user.userId, dish.id);
+                        fav.classList.toggle("liked");
+                    } else {
 
-                    fetch(request)
-                        .then(r => r.json())
-                        .then(resource => {
-                            console.log(resource);
-                        })
+                    
+                        event.stopPropagation();
+                        fav.classList.toggle("liked");
 
+                        fav.id = dish.id;
+                        //console.log(dish.id);
+
+                        
+                        post_favorite = {
+                            dishId: dish.id,
+                            userId: user.userId
+                        }
+
+                        let request = new Request("./addFavorite.php", {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(post_favorite)
+                        });
+
+                        fetch(request)
+                            .then(r => r.json())
+                            .then(resource => {
+                                localStorage.setItem("user", JSON.stringify(resource));
+                                fav.classList.add("liked");
+                                console.log(resource);
+                            })
+                        }
                 });
                 
                 div.append(fav); 
@@ -107,6 +121,23 @@ filteredButtons.forEach(button => button.addEventListener("click", getDishes));
     //}
 //}
 
+function delete_favorite_homepage (id, dishId){
+
+    let request = new Request("./deleteFavorite.php", {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            userId: id,
+            dishId: dishId
+        }),
+    });
+
+    fetch(request)
+        .then(r => r.json())
+        .then(resource => {
+            localStorage.setItem("user", JSON.stringify(resource));
+        });
+}
 
 getDishes();
 

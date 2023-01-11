@@ -14,8 +14,6 @@
         "userName": "SofieJohansson",
         "password": "fineapple",
         "favorites": [
-            13,
-            7,
             2
         ]
     },
@@ -29,6 +27,12 @@
         "userId": 4,
         "userName": "Clara",
         "password": "mau123",
+        "favorites": []
+    },
+    {
+        "userId": 5,
+        "userName": "Melinda123",
+        "password": "bananer",
         "favorites": []
     }
 ]

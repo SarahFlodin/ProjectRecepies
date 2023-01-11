@@ -21,7 +21,7 @@ if($requestMethod == "POST"){
     $newPassword = $_POST["password"];
     $repeatedNewPassword = $_POST["repeatPassword"];
 
-    if(!isset($newUsername, $newPassword, $repeatedNewPassword )){
+    if(!isset($_POST["userName"], $_POST["password"], $_POST["repeatPassword"])){
         $error = ["error" => "Fyll i alla fält!"];
         sendStatus($error, 406);
      } elseif($newUsername == ""){
@@ -33,12 +33,7 @@ if($requestMethod == "POST"){
     } elseif(strlen($newPassword) < 6 ){
         $error = ["error" => "Lösenordet ska vara minst 6 tecken."];
         sendStatus($error, 406);
-    } 
-    //avkommentera den undra raden när vi tagit bort
-    //mellanrummen på användarna i user.json
-    //för att inte kunna skapa en användare med
-    //bara ett blankspace
-    elseif(count(explode(' ', $newUsername)) > 1) {
+    } elseif(count(explode(' ', $newUsername)) > 1) {
         $error1 = ["error1" => " Användarnament kan inte innehålla blankspace."];
         sendStatus($error1, 406);
     }

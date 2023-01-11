@@ -1,12 +1,7 @@
 function getFavorites() {
-    let id = window.localStorage.getItem("userId");
+    let user = JSON.parse(window.localStorage.getItem("user"));
+    let id = user.userId;
 
-    let rqst = new Request(`./getUser.php?userId=${id}`);
-    fetch(rqst)
-        .then(r => r.json())
-        .then(user => {
-            console.log(user);
-            console.log(user.favorites);
             let favorites = user.favorites;
             for (let i = 0; i < favorites.length; i++) {
                 let onefavorite = favorites[i];
@@ -30,8 +25,9 @@ function getFavorites() {
                             event.stopPropagation();
 
                             console.log(dish.id);
-
-                            delete_favorite(id, dish.id);
+                            
+                            delete_favorite(id, dish.id, fav);
+                            
                         });
 
                         document.querySelector("#recepies").append(div);
@@ -47,10 +43,10 @@ function getFavorites() {
                     })
 
             }
-        })
+        
 }
 
-function delete_favorite(id, dishId){
+function delete_favorite(id, dishId, fav){
 
     let request = new Request("./deleteFavorite.php", {
         method: "DELETE",
@@ -64,7 +60,8 @@ function delete_favorite(id, dishId){
     fetch(request)
         .then(r => r.json())
         .then(resource => {
-            getFavorites();
+            localStorage.setItem("user", JSON.stringify(resource));
+            fav.parentElement.remove();
         });
 }
 

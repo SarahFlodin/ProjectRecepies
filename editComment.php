@@ -18,7 +18,7 @@ if ($requestMethod == "PATCH") {
     $commentId = $requestData["commentId"];
     $message = $requestData["message"];
 
-   if(isset($commentId, $message)){
+   if(isset($requestData["commentId"], $requestData["message"])){
 
     if($message == ""){
         $error = ["error" => "Du måste fylla i fältet!"];

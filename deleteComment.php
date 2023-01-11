@@ -17,7 +17,7 @@ if ($requestMethod == "DELETE") {
 
     $commentId = $requestData["commentId"];
 
-    if (!isset($commentId)) {
+    if (!isset($requestData["commentId"])) {
         $error = ["error" => "Bad Request"];
         sendStatus($error, 400);
     }

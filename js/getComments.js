@@ -29,9 +29,9 @@ get_comment();
 
 
 function buildComments(comment) {
-
+    
     let userId = comment.userId;
-
+    //console.log(comment);
     let rqst = new Request(`./getUser.php?userId=${userId}`);
     fetch(rqst)
     .then(r => r.json())
@@ -46,8 +46,13 @@ function buildComments(comment) {
             <h3>${profileName}</h3>
             <p>${comment.message}</p>
             `;
+        if (localStorage.length != 0) {
 
-    if (localStorage.getItem("userId") == comment.userId) {
+        
+        let user = JSON.parse(window.localStorage.getItem("user"));
+        let id = user.userId;
+
+        if (id == comment.userId) {
         let buttons = document.createElement("div");
         buttons.classList.add("commentButtons");
 
@@ -89,15 +94,15 @@ function buildComments(comment) {
         takeAway.classList.add("takeAway");
         takeAway.innerHTML = "Radera kommentar";
         takeAway.addEventListener("click", function () {
-            delete_comment(comment.commentId);
+            delete_comment(comment.commentId, commentDiv);
 
         });
 
         buttons.append(takeAway);
         commentDiv.append(buttons);
     }
-
-})
+}
+});
 }
 
 function edit_comment(commentId) {
@@ -123,10 +128,11 @@ function edit_comment(commentId) {
                 get_comment();
             }
 
-        })
+        });
 }
 
-function delete_comment(commentId) {
+function delete_comment(commentId, comment) {
+    console.log(commentId);
     delete_message = {
         commentId: commentId,
     }
@@ -139,7 +145,8 @@ function delete_comment(commentId) {
     fetch(rqst)
         .then(r => r.json())
         .then(resource => {
-            get_comment();
+            
+            comment.remove();
         })
 }
 
@@ -154,7 +161,8 @@ button.addEventListener("click", function () {
 
 function comments_input() {
     let message = document.querySelector("#commentInput").value;
-    let userId = window.localStorage.getItem("userId");
+    let user = JSON.parse(window.localStorage.getItem("user"));
+    let userId = user.userId;
 
     let locationArray = location.href.split("?");
     let idString = locationArray[1];
@@ -162,7 +170,7 @@ function comments_input() {
     let id = idArray[1];
 
     make_comment = {
-        userId: parseInt(userId),
+        userId: userId,
         message: message,
         dishId: parseInt(id),
     }

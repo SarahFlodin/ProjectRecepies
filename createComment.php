@@ -19,7 +19,7 @@ if ($requestMethod == "POST") {
     $message = $_POST["message"];
     $dishId = $_POST["dishId"];
 
-    if(isset($userId, $message, $dishId)) {
+    if(isset($_POST["userId"], $_POST["message"], $_POST["dishId"])) {
 
         if($message == ""){
             $error = ["error" => "Du måste fylla i fältet!"];
