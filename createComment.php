@@ -5,8 +5,8 @@ require_once "functions.php";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 $comments = [];
 
-if (file_exists("comments.json")) {
-    $json = file_get_contents("comments.json");
+if (file_exists("./JSON/comments.json")) {
+    $json = file_get_contents("./JSON/comments.json");
     $comments = json_decode($json, true);
 }
 
@@ -38,7 +38,7 @@ if ($requestMethod == "POST") {
         $newComment = ["userId" => $userId, "commentId" => $commentId, "dishId" => $dishId, "message" => $message];
         $comments[] = $newComment;
         $json = json_encode($comments, JSON_PRETTY_PRINT);
-        file_put_contents("comments.json", $json);
+        file_put_contents("./JSON/comments.json", $json);
 
         header("Content-Type: application/json");
         http_response_code(200);

@@ -7,8 +7,8 @@ require_once "functions.php";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 
-if (file_exists("comments.json")) {
-    $json = file_get_contents("comments.json");
+if (file_exists("./JSON/comments.json")) {
+    $json = file_get_contents("./JSON/comments.json");
     $comments = json_decode($json, true);
 }
 $comment_array = [];

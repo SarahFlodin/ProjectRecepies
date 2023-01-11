@@ -6,7 +6,6 @@ function getFavorites() {
     if (favorites.length > 0) {
         for (let i = 0; i < favorites.length; i++) {
             let onefavorite = favorites[i];
-            console.log(onefavorite);
 
             let request = new Request(`./getOneRecepie.php?id=${onefavorite}`);
             fetch(request)

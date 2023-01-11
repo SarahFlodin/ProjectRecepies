@@ -4,8 +4,8 @@ require_once "functions.php";
 
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-if (file_exists("dishes.json")) {
-    $json = file_get_contents("dishes.json");
+if (file_exists("./JSON/dishes.json")) {
+    $json = file_get_contents("./JSON/dishes.json");
     $recepies = json_decode($json, true);
 }
 
