@@ -37,17 +37,17 @@ body {
   padding-left: 30px;
   padding-bottom: 30px;
   box-shadow: 5px 10px aquamarine;
-  align-self:center;
-  transition:all .5s ease;
-  color:#41403E;
-  letter-spacing:1px;
-  outline:none;
+  align-self: center;
+  transition: all .5s ease;
+  color: #41403E;
+  letter-spacing: 1px;
+  outline: none;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
 .smallDishes:hover {
   cursor: pointer;
-  box-shadow:2px 8px 4px -6px rgba(127, 255, 212, 0.452);
+  box-shadow: 2px 8px 4px -6px rgba(127, 255, 212, 0.452);
 }
 
 .dish-img {
@@ -58,7 +58,7 @@ body {
   align-self: center;
   background: #fff;
   border: 1px solid #ddd;
-  box-shadow: 0 1px 3px rgba(0,0,0,.4);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
   display: inline-block;
   height: auto;
   margin: 0 20px;
@@ -92,23 +92,23 @@ body {
 
 .img-tape::before {
   background: rgba(255, 224, 212, 0.38);
-    box-shadow: 0 1px 3px rgba(0,0,0,.4);
-    content: "";
-    display: block;
-    height: 30px;
-    position: absolute;
-    margin: auto;
-    width: 100px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+  content: "";
+  display: block;
+  height: 30px;
+  position: absolute;
+  margin: auto;
+  width: 100px;
 }
 
 .img-tape::after {
   background: rgba(255, 224, 212, 0.38);
-    box-shadow: 0 1px 3px rgba(0,0,0,.4);
-    content: "";
-    height: 30px;
-    position: absolute;
-    margin: auto;
-    width: 100px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+  content: "";
+  height: 30px;
+  position: absolute;
+  margin: auto;
+  width: 100px;
 }
 
 .dish-name {
@@ -127,7 +127,8 @@ body {
 }
 
 /* Buttons */
-.filterButton, #backButton {
+.filterButton,
+#backButton {
   font-size: 16px;
   margin-right: 10px;
   margin-top: 20px;
@@ -142,15 +143,16 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  align-self:center;
-  background:transparent;
-  transition:all .5s ease;
-  color:#41403E;
-  letter-spacing:1px;
+  align-self: center;
+  background: transparent;
+  transition: all .5s ease;
+  color: #41403E;
+  letter-spacing: 1px;
   border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
-.filterButton:after, #backButton:after {
+.filterButton:after,
+#backButton:after {
   content: "";
   background-color: var(--pinkColor);
   width: 100%;
@@ -162,7 +164,8 @@ body {
   transition: 0.2s;
 }
 
-.filterButton:hover:after, #backButton:hover:after {
+.filterButton:hover:after,
+#backButton:hover:after {
   top: 0px;
   left: 0px;
 }
@@ -190,10 +193,11 @@ body {
   background-size: cover;
   z-index: 500;
 }
- .noFavorites{
+
+.noFavorites {
   background-image: url("./images/noFavorites.png");
   height: 60vh;
   width: 50vw;
   background-position: center;
   background-size: cover;
- }
+}
