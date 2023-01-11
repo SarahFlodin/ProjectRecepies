@@ -3,47 +3,53 @@ function getFavorites() {
     let id = user.userId;
 
             let favorites = user.favorites;
-            for (let i = 0; i < favorites.length; i++) {
-                let onefavorite = favorites[i];
-                console.log(onefavorite);
+            if(favorites.length > 0){
+                for (let i = 0; i < favorites.length; i++) {
+                    let onefavorite = favorites[i];
+                    console.log(onefavorite);
 
-                let request = new Request(`./getOneRecepie.php?id=${onefavorite}`);
-                fetch(request)
-                    .then(r => r.json())
-                    .then(dish => {
-                        let div = document.createElement("div");
-                        div.classList.add("smallDishes");
+                    let request = new Request(`./getOneRecepie.php?id=${onefavorite}`);
+                    fetch(request)
+                        .then(r => r.json())
+                        .then(dish => {
+                            let div = document.createElement("div");
+                            div.classList.add("smallDishes");
 
-                        div.addEventListener("click", function () {
-                            location.href = `./recepies.html?id=${dish.id}`;
-                        });
-                        
-                        let fav = document.createElement("div");
-                        fav.classList.add("liked");
-
-                        fav.addEventListener("click", function(event){
-                            event.stopPropagation();
-
-                            console.log(dish.id);
+                            div.addEventListener("click", function () {
+                                location.href = `./recepies.html?id=${dish.id}`;
+                            });
                             
-                            delete_favorite(id, dish.id, fav);
+                            let fav = document.createElement("div");
+                            fav.classList.add("liked");
+
+                            fav.addEventListener("click", function(event){
+                                event.stopPropagation();
+
+                                console.log(dish.id);
+                                
+                                delete_favorite(id, dish.id, fav);
+                                
+                            });
+
+                            document.querySelector("#recepies").append(div);
+                            div.innerHTML = `
+                            <h3 class="dish-name">${dish.name} - ${dish.time} min</h3>
+                            <p class="dish-info">${dish.info}</p>
+                            <div class="img-tape img-tape--1">
+                                <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
+                            </div>`;
+
+                            div.append(fav); 
                             
-                        });
+                        })
 
-                        document.querySelector("#recepies").append(div);
-                        div.innerHTML = `
-                        <h3 class="dish-name">${dish.name} - ${dish.time} min</h3>
-                        <p class="dish-info">${dish.info}</p>
-                        <div class="img-tape img-tape--1">
-                            <img src="${dish.pictureurl}" alt="bild på ${dish.name}" class="dish-img">
-                        </div>`;
+                }
+            }else {
+                let noFavorites = document.createElement("div");
+                noFavorites.classList.add("noFavorites");
 
-                        div.append(fav); 
-                        
-                    })
-
+                recepies.append(noFavorites);
             }
-        
 }
 
 function delete_favorite(id, dishId, fav){
