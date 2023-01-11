@@ -22,7 +22,7 @@ if ($requestMethod == "PATCH") {
 
     if($message == ""){
         $error = ["error" => "Du måste fylla i fältet!"];
-        sendStatus($error, 404);
+        sendStatus($error, 406);
     }
 
         foreach($comments as $id => $comment) {

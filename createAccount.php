@@ -23,16 +23,16 @@ if($requestMethod == "POST"){
 
     if(!isset($newUsername, $newPassword, $repeatedNewPassword )){
         $error = ["error" => "Fyll i alla fält!"];
-        sendStatus($error, 400);
+        sendStatus($error, 406);
      } elseif($newUsername == ""){
         $error1 = ["error1" => "Fyll i fältet!"];
-        sendStatus($error1, 400);
+        sendStatus($error1, 406);
      } elseif($repeatedNewPassword != $newPassword){
         $error = ["error" => "Lösenordet matchar inte."];
-        sendStatus($error, 400);
+        sendStatus($error, 406);
     } elseif(strlen($newPassword) < 6 ){
         $error = ["error" => "Lösenordet ska vara minst 6 tecken."];
-        sendStatus($error, 400);
+        sendStatus($error, 406);
     } 
     //avkommentera den undra raden när vi tagit bort
     //mellanrummen på användarna i user.json

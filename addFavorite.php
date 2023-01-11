@@ -37,4 +37,7 @@ if($requestedMethod == "POST"){
 
     }
 
+    $error = ["error" => "Not Found"];
+    sendStatus($error, 404);
+
 }

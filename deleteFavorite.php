@@ -40,4 +40,7 @@ if($requestedMethod == "DELETE"){
 
     }
 
+    $error = ["error" => "Bad Request"];
+    sendStatus($error, 400);
+
 }

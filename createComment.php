@@ -23,7 +23,7 @@ if ($requestMethod == "POST") {
 
         if($message == ""){
             $error = ["error" => "Du måste fylla i fältet!"];
-            sendStatus($error, 404);
+            sendStatus($error, 406);
         }
        
         $newId = 0;

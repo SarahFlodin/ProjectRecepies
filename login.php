@@ -27,6 +27,6 @@ if($requestMethod == "POST"){
            
     } 
     $error = ["error" => "Användaren hittas inte!"];
-    sendStatus($error, 400);
+    sendStatus($error, 404);
 }
 ?>
