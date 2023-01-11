@@ -197,7 +197,7 @@ body {
 .noFavorites {
   background-image: url("./images/noFavorites.png");
   height: 60vh;
-  width: 50vw;
+  width: 60vh;
   background-position: center;
   background-size: cover;
 }
