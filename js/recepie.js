@@ -73,6 +73,7 @@ function buildDish(dish) {
     `;
 
 }
+
     //ha innanför innerHTML med
     //dish.pictureurl dish.rating button = heart
     //(samma som heartfunktionen på startsidan)
