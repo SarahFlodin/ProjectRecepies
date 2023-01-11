@@ -171,7 +171,8 @@ img.dish-img {
 }
 
 
-#commentButton, #backButton {
+#commentButton,
+#backButton {
     font-size: 16px;
     margin-right: 10px;
     margin-top: 20px;
@@ -194,7 +195,8 @@ img.dish-img {
     border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
 }
 
-#commentButton:after, #backButton:after {
+#commentButton:after,
+#backButton:after {
     content: "";
     background-color: var(--pinkColor);
     width: 100%;
@@ -206,7 +208,8 @@ img.dish-img {
     transition: 0.2s;
 }
 
-#commentButton:hover:after, #backButton:hover:after{
+#commentButton:hover:after,
+#backButton:hover:after {
     top: 0px;
     left: 0px;
 }
@@ -310,7 +313,7 @@ div.editButtons {
     align-self: center;
     background: #fff;
     border: 1px solid #ddd;
-    box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
     display: inline-block;
     height: auto;
     margin: 0 20px;
@@ -318,4 +321,4 @@ div.editButtons {
     padding: 8px;
     text-align: center;
     vertical-align: top;
-  }
+}

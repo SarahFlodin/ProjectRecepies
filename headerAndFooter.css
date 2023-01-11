@@ -1,5 +1,3 @@
-
-
 header {
     width: 100vw;
     height: 30vh;
@@ -10,7 +8,7 @@ header {
     position: relative;
 }
 
-.wave::before{
+.wave::before {
     content: "";
     position: absolute;
     left: 0;
@@ -20,9 +18,10 @@ header {
     height: 10px;
     background-size: 20px 20px;
     background-image:
-     radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
-  }
-  .wave::after{
+        radial-gradient(circle at 10px -5px, transparent 12px, #fff 13px);
+}
+
+.wave::after {
     content: "";
     position: absolute;
     left: 0;
@@ -30,11 +29,10 @@ header {
     right: 0;
     background-repeat: repeat;
     background-image:
-      radial-gradient(circle at 10px 15px, #fff 12px, transparent 13px);
-  }
+        radial-gradient(circle at 10px 15px, #fff 12px, transparent 13px);
+}
 
-
-.headerPic{
+.headerPic {
     height: 12vw;
     position: absolute;
     left: 50%;
@@ -64,7 +62,6 @@ header {
     height: 0px;
     width: 0px;
     z-index: 3;
-
 }
 
 #popUp {
@@ -203,11 +200,12 @@ footer {
 .footerLoggo {
     height: 40px;
 }
+
 #favoriteHead {
     display: flex;
     justify-content: center;
 }
 
-#favoriteHead > img {
+#favoriteHead>img {
     width: 60%;
 }

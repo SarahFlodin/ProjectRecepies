@@ -27,7 +27,9 @@
         "userId": 4,
         "userName": "Clara",
         "password": "mau123",
-        "favorites": []
+        "favorites": [
+            1
+        ]
     },
     {
         "userId": 5,

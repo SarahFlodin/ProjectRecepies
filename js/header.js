@@ -2,7 +2,6 @@ function back() {
     window.history.back();
 }
 
-
 function buildHeader() {
     if (localStorage.length == 0) {
         let headerDiv = document.querySelector("header");
@@ -25,8 +24,8 @@ function buildHeader() {
         header.append(userLoggo);
         userLoggo.innerHTML = `
             <img src="./images/userloggo.png" alt="green loggo" width="100px" height="100px">
-        `
-    
+        `;
+
         document.querySelector(".userLoggo").addEventListener("click", function () {
             login();
         });
@@ -46,7 +45,6 @@ function buildHeader() {
         document.querySelector(".headerPic").addEventListener("click", function () {
             location.href = "./index.html";
         });
-
 
         let div = document.createElement("div");
         div.classList.add("loggOut");
@@ -69,10 +67,10 @@ function buildHeader() {
         userLoggo.style.cursor = "default";
         addHeart();
     }
-        //TO DO: Lägg till namnet på sidan   
+
 }
 
-function addHeart () {
+function addHeart() {
     let user = JSON.parse(window.localStorage.getItem("user"));
     let id = user.userId;
     if (id > 0) {

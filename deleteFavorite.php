@@ -15,10 +15,9 @@ if (file_exists("user.json")) {
 $requestJson = file_get_contents("php://input");
 $requestedData = json_decode($requestJson, true);
 
+$dishId = $requestedData["dishId"];
+$userId = $requestedData["userId"];
 
-
-    $dishId = $requestedData["dishId"];
-    $userId = $requestedData["userId"];
 if ($requestedMethod == "DELETE") {
 
 
