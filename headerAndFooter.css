@@ -1,3 +1,5 @@
+
+
 header {
     width: 100vw;
     height: 30vh;
@@ -8,8 +10,7 @@ header {
     position: relative;
 }
 
-   
-  .wave::before{
+.wave::before{
     content: "";
     position: absolute;
     left: 0;
@@ -191,7 +192,7 @@ footer {
     width: 100vw;
     height: 7.5vh;
     bottom: 0;
-    background-color: pink;
+    background-color: #ffc0cb;
     display: grid;
     align-items: center;
     justify-items: center;
@@ -201,4 +202,12 @@ footer {
 
 .footerLoggo {
     height: 40px;
+}
+#favoriteHead {
+    display: flex;
+    justify-content: center;
+}
+
+#favoriteHead > img {
+    width: 60%;
 }
