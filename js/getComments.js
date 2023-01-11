@@ -68,9 +68,9 @@ function buildComments(comment) {
                         regret.innerHTML = "Ångra";
 
                         commentDiv.innerHTML = `
-            <h3>${profileName}</h3>
-            <textarea id="saveEdit" type="text">${comment.message} </textarea>
-            <p id="errorMessage5"></p>`;
+                        <h3>${profileName}</h3>
+                        <textarea id="saveEdit" type="text">${comment.message} </textarea>
+                        <p id="errorMessage5"></p>`;
 
                         commentDiv.append(editbox);
 

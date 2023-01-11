@@ -3,7 +3,6 @@ function getDish() {
     let idString = locationArray[1];
     let idArray = idString.split("=");
     let id = idArray[1];
-    console.log(id);
 
     let rqst = new Request(`./getOneRecepie.php?id=${id}`);
     fetch(rqst)

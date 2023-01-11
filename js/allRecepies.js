@@ -72,7 +72,6 @@ function getDishes() {
                                 .then(resource => {
                                     localStorage.setItem("user", JSON.stringify(resource));
                                     fav.classList.add("liked");
-                                    console.log(resource);
                                 })
                         }
                     });

@@ -7,8 +7,8 @@ require_once "functions.php";
 $requestedMethod = $_SERVER["REQUEST_METHOD"];
 
 $users = [];
-if (file_exists("user.json")) {
-    $json = file_get_contents("user.json");
+if (file_exists("./JSON/user.json")) {
+    $json = file_get_contents("./JSON/user.json");
     $users = json_decode($json, true);
 }
 
@@ -38,7 +38,7 @@ if ($requestedMethod == "DELETE") {
                         $users[$number] = $user;
                         
                         $json = json_encode($users, JSON_PRETTY_PRINT);
-                        file_put_contents("user.json", $json);
+                        file_put_contents("./JSON/user.json", $json);
                         sendStatus($user);
                     }
                 }

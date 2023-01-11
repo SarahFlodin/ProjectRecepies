@@ -153,7 +153,7 @@ function getUser(event) {
                 document.querySelector(".overlay").style.display = "none";
                 window.localStorage.setItem("user", JSON.stringify(resource));
                 console.log(resource);
-                location.reload()
+                location.reload();
             }
         })
 }
@@ -234,6 +234,8 @@ function createUser() {
                 let user = resource.userName;
                 console.log(`Användaren ${user} är tillagd!`);
                 document.querySelector(".overlay2").style.display = "none";
+                window.localStorage.setItem("user", JSON.stringify(resource));
+                location.reload();
             }
         })
 }

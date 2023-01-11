@@ -6,8 +6,8 @@ $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 $users = [];
 
-if (file_exists("user.json")) {
-    $json = file_get_contents("user.json");
+if (file_exists("./JSON/user.json")) {
+    $json = file_get_contents("./JSON/user.json");
     $users = json_decode($json, true);
 }
 
@@ -59,7 +59,7 @@ if($requestMethod == "POST"){
     $newUser = ["userId" => $userId, "userName" => $newUsername, "password" => $newPassword, "favorites" => []];
     $users[] = $newUser;
     $json = json_encode($users, JSON_PRETTY_PRINT);
-    file_put_contents("user.json", $json);
+    file_put_contents("./JSON/user.json", $json);
     sendStatus($newUser);
 
 }
