@@ -1,18 +1,21 @@
 function getDishes(){
+
     let value = this.value;
     let rqst = new Request("./getRecepies.php");
+
     fetch(rqst)
     .then( r => r.json())
     .then(resource => {
         document.querySelector("#recepies").innerHTML = "";
         let filtered = resource;
+
         if (value){
            filtered = resource.filter(dish => dish.category == value) 
         }
 
-        let favoriteId = localStorage.getItem("favorites");
+        let favoriteArray = localStorage.getItem("favorites");
 
-        console.log(favoriteId);
+        // let found = favoriteArray.find()
         
         filtered.forEach(dish => {
             let div = document.createElement("div");
@@ -42,31 +45,35 @@ function getDishes(){
                 fav.classList.add("favorites");
 
                 fav.addEventListener("click", function(event){
-                event.stopPropagation();
-                fav.classList.toggle("liked");
+                    
+                    event.stopPropagation();
+                    fav.classList.toggle("liked");
 
-                fav.id = dish.id;
-                //console.log(dish.id);
+                    fav.id = dish.id;
+                    //console.log(dish.id);
 
-                let userId = localStorage.getItem("userId");
-                
-                post_favorite = {
-                    dishId: dish.id,
-                    userId: userId
-                }
+                    let userId = localStorage.getItem("userId");
+                    
+                    post_favorite = {
+                        dishId: dish.id,
+                        userId: userId
+                    }
 
-                let request = new Request("./addFavorite.php", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(post_favorite)
+                    let request = new Request("./addFavorite.php", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(post_favorite)
+                    });
+
+                    fetch(request)
+                        .then(r => r.json())
+                        .then(resource => {
+                            console.log(resource);
+                        })
+
                 });
-                fetch(request)
-                    .then(r => r.json())
-                    .then(resource => {
-                        console.log(resource);
-                    })
-            });
-               div.append(fav); 
+                
+                div.append(fav); 
                
             }
             
