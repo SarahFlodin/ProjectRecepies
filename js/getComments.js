@@ -24,85 +24,80 @@ function get_comment() {
 
 };
 
-
-get_comment();
-
-
 function buildComments(comment) {
-    
+
     let userId = comment.userId;
-    //console.log(comment);
     let rqst = new Request(`./getUser.php?userId=${userId}`);
     fetch(rqst)
-    .then(r => r.json())
-    .then(resource => {
-        let profileName = resource.userName;
-   
-    let commentDiv = document.createElement("div");
-    commentDiv.classList.add("comment");
-    document.querySelector("#commentDiv").append(commentDiv);
+        .then(r => r.json())
+        .then(resource => {
+            let profileName = resource.userName;
 
-    commentDiv.innerHTML += `
+            let commentDiv = document.createElement("div");
+            commentDiv.classList.add("comment");
+            document.querySelector("#commentDiv").append(commentDiv);
+
+            commentDiv.innerHTML += `
             <h3>${profileName}</h3>
             <p>${comment.message}</p>
             `;
-        if (localStorage.length != 0) {
 
-        
-        let user = JSON.parse(window.localStorage.getItem("user"));
-        let id = user.userId;
+            if (localStorage.length != 0) {
 
-        if (id == comment.userId) {
-        let buttons = document.createElement("div");
-        buttons.classList.add("commentButtons");
+                let user = JSON.parse(window.localStorage.getItem("user"));
+                let id = user.userId;
 
-        let edit = document.createElement("button");
-        edit.classList.add("edit");
-        edit.innerHTML = "Redigera kommentar";
-        edit.addEventListener("click", function () {
+                if (id == comment.userId) {
+                    let buttons = document.createElement("div");
+                    buttons.classList.add("commentButtons");
 
-            let editbox = document.createElement("div");
-            editbox.classList.add("editButtons");
+                    let edit = document.createElement("button");
+                    edit.classList.add("edit");
+                    edit.innerHTML = "Redigera kommentar";
+                    edit.addEventListener("click", function () {
 
-            let save = document.createElement("button");
-            save.classList.add("save");
-            save.innerHTML = "Spara";
+                        let editbox = document.createElement("div");
+                        editbox.classList.add("editButtons");
 
-            let regret = document.createElement("button");
-            regret.classList.add("regret");
-            regret.innerHTML = "Ångra";
+                        let save = document.createElement("button");
+                        save.classList.add("save");
+                        save.innerHTML = "Spara";
 
-            commentDiv.innerHTML = `
+                        let regret = document.createElement("button");
+                        regret.classList.add("regret");
+                        regret.innerHTML = "Ångra";
+
+                        commentDiv.innerHTML = `
             <h3>${profileName}</h3>
             <textarea id="saveEdit" type="text">${comment.message} </textarea>
             <p id="errorMessage5"></p>`;
 
-            commentDiv.append(editbox);
+                        commentDiv.append(editbox);
 
-            editbox.append(regret);
-            regret.addEventListener("click", get_comment);
+                        editbox.append(regret);
+                        regret.addEventListener("click", get_comment);
 
-            editbox.append(save);
-            save.addEventListener("click", function () {
-                edit_comment(comment.commentId);
-            })
+                        editbox.append(save);
+                        save.addEventListener("click", function () {
+                            edit_comment(comment.commentId);
+                        })
+                    });
+
+                    buttons.append(edit);
+
+                    let takeAway = document.createElement("button");
+                    takeAway.classList.add("takeAway");
+                    takeAway.innerHTML = "Radera kommentar";
+                    takeAway.addEventListener("click", function () {
+                        delete_comment(comment.commentId, commentDiv);
+
+                    });
+
+                    buttons.append(takeAway);
+                    commentDiv.append(buttons);
+                }
+            }
         });
-
-        buttons.append(edit);
-
-        let takeAway = document.createElement("button");
-        takeAway.classList.add("takeAway");
-        takeAway.innerHTML = "Radera kommentar";
-        takeAway.addEventListener("click", function () {
-            delete_comment(comment.commentId, commentDiv);
-
-        });
-
-        buttons.append(takeAway);
-        commentDiv.append(buttons);
-    }
-}
-});
 }
 
 function edit_comment(commentId) {
@@ -145,9 +140,9 @@ function delete_comment(commentId, comment) {
     fetch(rqst)
         .then(r => r.json())
         .then(resource => {
-            
+
             comment.remove();
-        })
+        });
 }
 
 let button = document.querySelector("#commentButton");
@@ -192,7 +187,9 @@ function comments_input() {
                 get_comment();
             }
 
-        })
-    document.querySelector("#commentInput").value = "";
+        });
 
+    document.querySelector("#commentInput").value = "";
 }
+
+get_comment();

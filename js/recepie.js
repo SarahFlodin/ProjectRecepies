@@ -1,30 +1,21 @@
 function getDish() {
     let locationArray = location.href.split("?");
-            let idString = locationArray[1];
-            let idArray = idString.split("=");
-            let id = idArray[1];
-             console.log(id);
-    
+    let idString = locationArray[1];
+    let idArray = idString.split("=");
+    let id = idArray[1];
+    console.log(id);
+
     let rqst = new Request(`./getOneRecepie.php?id=${id}`);
     fetch(rqst)
         .then(r => r.json())
         .then(dish => {
-            //console.log(dish)
             buildDish(dish);
         })
 
 }
 
-getDish();
-
 function buildDish(dish) {
 
-    //TO DO: get enskilt recepie i php
-    //samma med comment ( en enskild)
-    //Alltså egen api med recepie för enskilt recept
-    //och egen api för att hämta kommentarer för enskata recept
-    //I api if(requested = "GET")
-   
     let dishResult = document.querySelector("#recepie");
     let dishIntroduction = document.createElement("div");
     dishIntroduction.classList.add("dishIntro");
@@ -74,28 +65,4 @@ function buildDish(dish) {
 
 }
 
-    //ha innanför innerHTML med
-    //dish.pictureurl dish.rating button = heart
-    //(samma som heartfunktionen på startsidan)
-
-/*
- 
- 
- 
- här får vi rendera kommentarerna för varje recept
- let dishComments = document.createElement(“div”)
- let comment = comments.json[id]
- 
- en if-sats för att matcha dish-id med rätt kommentarer
- 
- dishComments.classList = “comments-container”
- dishComments.setAttribute(“id”, ´${comment.id}´);
- dishComments.innerHTML = ‘
- 
- ${comment.user}
- 
- ${datum för kommentaren}
- 
- ${comment.message}
- 
- }*/
+getDish();

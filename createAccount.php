@@ -24,10 +24,10 @@ if($requestMethod == "POST"){
     if(!isset($_POST["userName"], $_POST["password"], $_POST["repeatPassword"])){
         $error = ["error" => "Fyll i alla fält!"];
         sendStatus($error, 406);
-     } elseif($newUsername == ""){
+    } elseif($newUsername == ""){
         $error1 = ["error1" => "Fyll i fältet!"];
         sendStatus($error1, 406);
-     } elseif($repeatedNewPassword != $newPassword){
+    } elseif($repeatedNewPassword != $newPassword){
         $error = ["error" => "Lösenordet matchar inte."];
         sendStatus($error, 406);
     } elseif(strlen($newPassword) < 6 ){

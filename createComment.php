@@ -36,7 +36,6 @@ if ($requestMethod == "POST") {
 
         $commentId = $newId + 1;
         $newComment = ["userId" => $userId, "commentId" => $commentId, "dishId" => $dishId, "message" => $message];
-       //TO DO: lägg till datum, php date
         $comments[] = $newComment;
         $json = json_encode($comments, JSON_PRETTY_PRINT);
         file_put_contents("comments.json", $json);
