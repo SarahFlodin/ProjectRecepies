@@ -13,9 +13,7 @@
         "userId": 2,
         "userName": "SofieJohansson",
         "password": "fineapple",
-        "favorites": [
-            2
-        ]
+        "favorites": []
     },
     {
         "userId": 3,

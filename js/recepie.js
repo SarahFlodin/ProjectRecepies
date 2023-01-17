@@ -1,9 +1,13 @@
 function getDish() {
+
+    //Delar upp vår url och tar bort tecken för att göra om de till en array besående av url och id
     let locationArray = location.href.split("?");
     let idString = locationArray[1];
     let idArray = idString.split("=");
     let id = idArray[1];
 
+    //Skapar och skickar en request till getOneRecepie med idt från url
+    //Får tillbaka rätten som matchar id:t vi förfrågade
     let rqst = new Request(`./getOneRecepie.php?id=${id}`);
     fetch(rqst)
         .then(r => r.json())
@@ -13,6 +17,7 @@ function getDish() {
 
 }
 
+//Bygger rätten på resursen vi fått
 function buildDish(dish) {
 
     let dishResult = document.querySelector("#recepie");
@@ -34,6 +39,7 @@ function buildDish(dish) {
     dishIngredients.classList.add("dishIngredients");
     dishResult.append(dishIngredients);
 
+    //Går igenom ingredienserna och skriver dem i en lista
     for (let i = 0; i < dish.ingredients.length; i++) {
         let ingredient_dom = document.createElement("li");
         ingredient_dom.innerHTML = `${dish.ingredients[i]}`;

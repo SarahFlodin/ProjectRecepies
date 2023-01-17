@@ -1,3 +1,5 @@
+
+//Tar oss tillbaka till startsidan med url
 function back() {
     window.location.href ="./index.html";
 }
@@ -30,6 +32,7 @@ function buildHeader() {
             login();
         });
 
+        //Detta ska hända om du är inloggad
     } else if (localStorage.length > 0) {
         let headerDiv = document.querySelector("header");
         let header = document.createElement("div");
@@ -70,6 +73,7 @@ function buildHeader() {
 
 }
 
+//Bygger favorithjärtat
 function addHeart() {
     let user = JSON.parse(window.localStorage.getItem("user"));
     let id = user.userId;
@@ -87,6 +91,7 @@ function addHeart() {
     }
 }
 
+//Bygger logga in popup
 function login() {
 
     let wrapper = document.querySelector("#popUp");
@@ -126,8 +131,9 @@ function login() {
     })
 }
 
+
 function getUser(event) {
-    event.preventDefault();
+    event.preventDefault(); //Glömde tas bort, påverkar inget
     let username = document.querySelector("#username").value;
     let password = document.querySelector("#password").value;
 
@@ -158,6 +164,7 @@ function getUser(event) {
         })
 }
 
+//Skapar ny användare popup
 function createAccount() {
     let wrapper = document.querySelector("#popUp");
     let overlay = document.createElement("div");
@@ -198,23 +205,26 @@ function createAccount() {
     })
 }
 
+//Lägger till ny användare
 function createUser() {
 
     let username = document.querySelector("#newUser").value;
     let password = document.querySelector("#newPassword").value;
     let repeatPassword = document.querySelector("#repeatPassword").value;
 
+    // Sparar alla objekt/nycklar i en varibel
     let new_user = {
         userName: username,
         password: password,
         repeatPassword: repeatPassword,
     }
-
+    //Skapar request till createAccount med begäran, skickar med new_user (nya användaren)
     let rqst = new Request("./createAccount.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(new_user)
     });
+    //Skickar requesten, gör om den till json, får tillbaka resursen (nya användaren eller error meddelanden beroende på vad den får som svar)
     fetch(rqst)
         .then(r => r.json())
         .then(resource => {
@@ -234,10 +244,11 @@ function createUser() {
                 let user = resource.userName;
                 console.log(`Användaren ${user} är tillagd!`);
                 document.querySelector(".overlay2").style.display = "none";
+                //setItem gör att vi sparar hela user i localstorage, för att detta avgör hur sidan är byggd (inloggad/utloggad)
                 window.localStorage.setItem("user", JSON.stringify(resource));
                 location.reload();
             }
         })
 }
-
+//Kallar på att byggaHeader
 buildHeader();

@@ -76,5 +76,17 @@
         "commentId": 14,
         "dishId": 1,
         "message": "mums"
+    },
+    {
+        "userId": 3,
+        "commentId": 15,
+        "dishId": 1,
+        "message": "nej"
+    },
+    {
+        "userId": 3,
+        "commentId": 16,
+        "dishId": 1,
+        "message": "Hej"
     }
 ]
